@@ -1,0 +1,43 @@
+.banner {
+    position: relative;
+    padding-top: 80px;
+    &__text {
+        position: absolute;
+        top: 50%;
+        color: #fff;
+        max-width: 800px;
+        text-align: center;
+        margin: 0 auto;
+        left: 0%;
+        right: 0%;
+    }
+    &__title {
+        font-size: 62px;
+        font-weight: bold;
+    }
+    &__subtitle {
+        margin-top: 10px;
+        font-size: 22px;
+    }
+    .simpleParallax {
+        height: auto;
+        position: relative;
+    }
+
+    @media (max-width: 768px) {
+
+        &__text {
+            max-width: 300px;
+        }
+
+        &__title {
+            font-size: 24px;
+        }
+
+        &__subtitle {
+            font-size: 18px;
+        }
+
+    }
+
+}
