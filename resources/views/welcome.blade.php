@@ -7,7 +7,7 @@
 
         <title>Artefatos de cimento Portão</title>
 
-        <link rel="stylesheet" href="{{ mix('/css/app.css') . '?v=' . time() }}">
+        <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 
     </head>
     <body>
@@ -44,6 +44,6 @@
             Copyright © 2020 Artefatos de cimento Portão – todos os direitos reservados.
         </footer>
 
-        <script src="{{ mix('/js/app.js') . '?v=' . time() }}"></script>
+        <script src="{{ mix('/js/app.js') }}"></script>
     </body>
 </html>
