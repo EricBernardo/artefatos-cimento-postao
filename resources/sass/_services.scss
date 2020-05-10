@@ -1,0 +1,48 @@
+.services {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    flex-wrap: wrap;
+    margin: 0 auto;
+    background: #f6f6f6;
+    &__title {
+        font-size: 44px;
+        color: #ff4c00;
+        padding: 50px;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+    }
+    &__items {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 90%;
+    }
+    .service_item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+        &__image {
+            margin: 20px;
+            width: 50%;
+        }
+        &__info {
+            margin: 20px;
+            width: 50%;
+            text-align: center;
+        }
+        &__title {
+            margin-bottom: 50px;            
+            font-size: 22px;
+            color: #151515;
+        }
+        &__description {
+            font-size: 16px;
+            color: #575757;
+            line-height: 22px;
+        }
+    }
+}
+

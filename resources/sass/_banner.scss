@@ -1,15 +1,14 @@
 .banner {
     position: relative;
-    padding-top: 80px;
+    margin-top: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
     &__text {
         position: absolute;
-        top: 50%;
         color: #fff;
         max-width: 800px;
         text-align: center;
-        margin: 0 auto;
-        left: 0%;
-        right: 0%;
     }
     &__title {
         font-size: 62px;
@@ -25,7 +24,6 @@
     }
 
     @media (max-width: 768px) {
-
         &__text {
             max-width: 300px;
         }
