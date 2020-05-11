@@ -198,8 +198,8 @@ img {
   flex-wrap: wrap;
   margin: 0 auto;
   background: #f6f6f6;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-top: 40px;
 }
 
@@ -276,10 +276,21 @@ img {
     flex-direction: column;
   }
 
+  .services .service_item:nth-of-type(even) .service_item__image {
+    padding: 0px;
+  }
+
+  .services .service_item:nth-of-type(odd) {
+    flex-direction: column;
+  }
+
+  .services .service_item:nth-of-type(odd) .service_item__image {
+    padding: 0px;
+  }
+
   .services .service_item__image,
   .services .service_item__info {
     max-width: 100%;
-    padding: 0px;
   }
 }
 
