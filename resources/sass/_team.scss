@@ -1,4 +1,4 @@
-.services {
+.teams {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8,7 +8,7 @@
     background: #fff;
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 40px;
+    padding-top: 20px;
 
     &__title {
         font-size: 44px;
@@ -21,40 +21,32 @@
     &__items {
         display: flex;
         align-items: center;
-        flex-direction: column;
+        flex-direction: row;
+        max-width: 1300px;
+        width: 100%;
     }
 
-    .service_item {
+    .team_item {
         display: flex;
-        justify-content: center;
         margin-bottom: 40px;
         text-align: center;
+        flex-direction: column;
+        width: 33.3%;
 
         &__image {
-            max-width: 50%;
+            width: 200px;
             margin-bottom: 20px;
-            img {
-                max-width: 500px;
-                margin: 0 auto;
-            }
-        }
-        &:nth-of-type(even) {
-            flex-direction: row-reverse;
-            .service_item__image {
-                padding-left: 40px;
-            }
-        }
-        &:nth-of-type(odd) {
-            .service_item__image {
-                padding-right: 40px;
-            }
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+            height: 200px;
         }
 
         &__info {
-            max-width: 50%;
             display: flex;
             justify-content: center;
             flex-direction: column;
+            margin-top: 20px;
         }
 
         &__title {
@@ -67,7 +59,7 @@
             font-size: 16px;
             color: #575757;
             line-height: 22px;
-            max-width: 800px;
+            max-width: 600px;
         }
     }
 
@@ -75,26 +67,12 @@
         &__title {
             font-size: 32px;
         }
-        .service_item {
+        &__items {
             flex-direction: column;
-            &:nth-of-type(even) {
-                flex-direction: column;
-                .service_item__image {
-                    padding: 0px;
-                }
-
-            }
-            &:nth-of-type(odd) {
-                flex-direction: column;
-                .service_item__image {
-                    padding: 0px;
-                }
-            }
-
-            &__image,
-            &__info {
-                max-width: 100%;
-            }
+        }
+        .team_item {
+            flex-direction: column;
+            width: 100%;
         }
     }
 }
