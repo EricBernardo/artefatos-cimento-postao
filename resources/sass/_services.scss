@@ -5,43 +5,83 @@
     flex-wrap: wrap;
     margin: 0 auto;
     background: #f6f6f6;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 40px;
+
     &__title {
         font-size: 44px;
         color: #ff4c00;
-        padding: 50px;
-        width: 100%;
+        margin-bottom: 40px;
         text-align: center;
         font-weight: bold;
     }
+
     &__items {
         display: flex;
-        justify-content: space-around;
         align-items: center;
-        flex-wrap: wrap;
-        width: 90%;
+        flex-direction: column;
     }
-    .service_item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 50px;
+
+    .service_item {        
+        display: flex;      
+        justify-content: center;  
+        margin-bottom: 40px;
+        text-align: center;                
+
         &__image {
-            margin: 20px;
-            width: 50%;
+            max-width: 50%;
+            margin-bottom: 20px;            
+            img {
+                max-width: 500px;
+                margin: 0 auto;
+            }
         }
+        &:nth-of-type(even) {
+            flex-direction: row-reverse;
+            .service_item__image {    
+                padding-left: 40px;
+            }
+        }
+        &:nth-of-type(odd) {
+            .service_item__image {    
+                padding-right: 40px;                
+            }
+        }
+
         &__info {
-            margin: 20px;
-            width: 50%;
+            max-width: 50%;            
             text-align: center;
-        }
+        }    
+
         &__title {
-            margin-bottom: 50px;            
+            margin-bottom: 20px;            
             font-size: 22px;
             color: #151515;
         }
+
         &__description {
             font-size: 16px;
             color: #575757;
             line-height: 22px;
+        }        
+    }
+
+    @media (max-width: 768px) { 
+        &__title {
+            font-size: 32px;
+        }            
+        .service_item {
+            flex-direction: column;
+            &:nth-of-type(even) {
+                flex-direction: column;
+            }
+
+            &__image,
+            &__info {
+                max-width: 100%;
+                padding: 0px;
+            }
         }
     }
 }

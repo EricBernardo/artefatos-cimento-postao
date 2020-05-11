@@ -52,6 +52,9 @@
                         </div>
                     </div>
                     <div class="service_item">                        
+                        <div class="service_item__image">
+                            <img src="https://img1.wsimg.com/isteam/ip/8313ace8-7b24-46cb-894d-a1736efeb262/20170802_184823.jpg/:/cr=t:32.43%25,l:0%25,w:100%25,h:67.57%25/rs=w:600,h:300,cg:true" />
+                        </div>
                         <div class="service_item__info">
                             <div class="service_item__title">
                                 Consulta para compras
@@ -59,10 +62,7 @@
                             <div class="service_item__description">
                             Este é um dos nossos serviços mais populares. Fez uma grande diferença para muitos de nossos clientes, e é oferecido no mais alto nível de excelência. Com ele, asseguramos que todos os detalhes sejam simples, dinâmicos e executados em tempo útil. Sempre que trabalhar com o(a) Artefatos cimento portão, você pode confiar que estará em ótimas mãos.
                             </div>
-                        </div>
-                        <div class="service_item__image">
-                            <img src="https://img1.wsimg.com/isteam/ip/8313ace8-7b24-46cb-894d-a1736efeb262/20170802_184823.jpg/:/cr=t:32.43%25,l:0%25,w:100%25,h:67.57%25/rs=w:600,h:300,cg:true" />
-                        </div>
+                        </div>                        
                     </div>
                     <div class="service_item">
                         <div class="service_item__image">
