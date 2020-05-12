@@ -28,9 +28,10 @@
         </header>
 
         <div class="container">
-            @yield('content')
-            @include('includes/map')
+            @yield('content')            
         </div>
+
+        @include('includes/map')
 
         <footer class="footer">
             Copyright © 2020 Artefatos de cimento Portão – todos os direitos reservados.

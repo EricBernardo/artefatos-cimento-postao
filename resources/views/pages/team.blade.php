@@ -6,7 +6,7 @@
 
 <section>
         <div class="teams">
-            <div class="teams__title">Conheça nossa equipe</div>
+            <h1 class="teams__title">Conheça nossa equipe</h1>
             <div class="teams__items">
             <div class="team_item">
                     <div class="team_item__image">

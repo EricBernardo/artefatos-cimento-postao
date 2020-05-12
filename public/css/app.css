@@ -1,4 +1,4 @@
-@import url(//fonts.googleapis.com/css?family=Roboto);input:-webkit-autofill,
+@import url(//fonts.googleapis.com/css?family=Merriweather+Sans);input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
@@ -22,7 +22,7 @@ img {
 }
 
 * {
-  font-family: "Roboto";
+  font-family: "Merriweather Sans";
 }
 
 .header {
@@ -289,7 +289,6 @@ section {
 
 .banner {
   position: relative;
-  margin-top: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -337,6 +336,105 @@ section {
 
   .banner__img {
     margin-top: 0;
+  }
+}
+
+.blocks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.blocks__title {
+  font-size: 44px;
+  color: #ff4c00;
+  margin-bottom: 20px;
+}
+
+.blocks__items {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .blocks__title {
+    font-size: 32px;
+  }
+}
+
+.block_item {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.block_item__image {
+  max-width: 50%;
+  margin-bottom: 20px;
+}
+
+.block_item__image img {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.block_item:nth-of-type(even) {
+  flex-direction: row-reverse;
+}
+
+.block_item:nth-of-type(even) .block_item__image {
+  padding-left: 40px;
+}
+
+.block_item:nth-of-type(odd) .block_item__image {
+  padding-right: 40px;
+}
+
+.block_item__info {
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.block_item__title {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.block_item__description {
+  color: #575757;
+  line-height: 22px;
+  max-width: 500px;
+}
+
+@media (max-width: 768px) {
+  .block_item {
+    flex-direction: column;
+  }
+
+  .block_item:nth-of-type(even) {
+    flex-direction: column;
+  }
+
+  .block_item:nth-of-type(even) .block_item__image {
+    padding: 0px;
+  }
+
+  .block_item:nth-of-type(odd) {
+    flex-direction: column;
+  }
+
+  .block_item:nth-of-type(odd) .block_item__image {
+    padding: 0px;
+  }
+
+  .block_item__image,
+  .block_item__info {
+    max-width: 100%;
   }
 }
 
@@ -447,113 +545,6 @@ section {
   }
 }
 
-.products {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  background: #fff;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 20px;
-}
-
-.products__title {
-  font-size: 44px;
-  color: #ff4c00;
-  margin-bottom: 40px;
-  text-align: center;
-  font-weight: bold;
-}
-
-.products__items {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.products .product_item {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-.products .product_item__image {
-  max-width: 50%;
-  margin-bottom: 20px;
-}
-
-.products .product_item__image img {
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.products .product_item:nth-of-type(even) {
-  flex-direction: row-reverse;
-}
-
-.products .product_item:nth-of-type(even) .product_item__image {
-  padding-left: 40px;
-}
-
-.products .product_item:nth-of-type(odd) .product_item__image {
-  padding-right: 40px;
-}
-
-.products .product_item__info {
-  max-width: 50%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.products .product_item__title {
-  margin-bottom: 20px;
-  font-size: 22px;
-  color: #151515;
-}
-
-.products .product_item__description {
-  font-size: 16px;
-  color: #575757;
-  line-height: 22px;
-  max-width: 600px;
-}
-
-@media (max-width: 768px) {
-  .products__title {
-    font-size: 32px;
-  }
-
-  .products .product_item {
-    flex-direction: column;
-  }
-
-  .products .product_item:nth-of-type(even) {
-    flex-direction: column;
-  }
-
-  .products .product_item:nth-of-type(even) .product_item__image {
-    padding: 0px;
-  }
-
-  .products .product_item:nth-of-type(odd) {
-    flex-direction: column;
-  }
-
-  .products .product_item:nth-of-type(odd) .product_item__image {
-    padding: 0px;
-  }
-
-  .products .product_item__image,
-  .products .product_item__info {
-    max-width: 100%;
-  }
-}
-
 .contact {
   display: flex;
   align-items: center;
@@ -595,7 +586,7 @@ section {
 }
 
 .contact__desctiption p {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 @media (max-width: 768px) {
@@ -633,7 +624,7 @@ section {
 
 .abouts .about_item {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   margin-bottom: 40px;
   text-align: left;
 }

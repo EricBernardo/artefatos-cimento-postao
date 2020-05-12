@@ -6,7 +6,7 @@
 
 <section>
     <div class="abouts">
-        <div class="abouts__title">Quem somos</div>
+        <h1 class="abouts__title">Quem somos</h1>
         <div class="abouts__items">
             <div class="about_item">
                 <div class="about_item__image">
