@@ -1,5 +1,6 @@
 @import './_header';
 @import './_form';
+@import './_map';
 
 body {
     margin-top: 90px;
@@ -27,4 +28,8 @@ form button {
 
 section {
     position: relative;
+}
+
+h2, h3 {
+    font-weight: normal;
 }

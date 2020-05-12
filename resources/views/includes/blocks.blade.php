@@ -8,11 +8,11 @@
                         <img src="{{URL::asset('/images/' . $item['image'])}}" alt="{{ $item['title'] }}" />
                     </div>
                     <div class="block_item__info">
-                        <div class="block_item__title">{{ $item['title'] }}</div>
-                        <div class="block_item__description">{{ $item['description'] }}</div>
+                        <h2 class="block_item__title">{{ $item['title'] }}</h2>
+                        <h3 class="block_item__description">{{ $item['description'] }}</h3>
                     </div>
                 </div>
-            @endforeach    
+            @endforeach
         </div>
     </div>
 </section>

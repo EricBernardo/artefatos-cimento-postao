@@ -13,12 +13,8 @@
                         <img src="{{URL::asset('/images/jadir-kerber.jpg')}}" alt="Jadir Kerber" />
                     </div>
                     <div class="team_item__info">
-                        <div class="team_item__title">
-                            Jadir Kerber
-                        </div>
-                        <div class="team_item__description">
-                            Sócio proprietário
-                        </div>
+                        <h2 class="team_item__title">Jadir Kerber</h2>
+                        <h3 class="team_item__description">Sócio proprietário</h3>
                     </div>
                 </div>
                 <div class="team_item">
@@ -26,12 +22,8 @@
                         <img src="{{URL::asset('/images/ines-kerber.jpg')}}" alt="Inês Kerber" />
                     </div>
                     <div class="team_item__info">
-                        <div class="team_item__title">
-                            Inês Kerber
-                        </div>
-                        <div class="team_item__description">
-                        Gerente administrativo
-                        </div>
+                        <h2 class="team_item__title">Inês Kerber</h2>
+                        <h3 class="team_item__description">Gerente administrativo</h3>
                     </div>
                 </div>
                 <div class="team_item">
@@ -39,12 +31,8 @@
                         <img src="{{URL::asset('/images/patricia-e-k.jpg')}}" alt="Patricia E. K." />
                     </div>
                     <div class="team_item__info">
-                        <div class="team_item__title">
-                            Patricia E. K.
-                        </div>
-                        <div class="team_item__description">
-                            Representante do serviço de atendimento ao cliente
-                        </div>
+                        <h2 class="team_item__title">Patricia E. K.</h2>
+                        <h3 class="team_item__description">Representante do serviço de atendimento ao cliente</h3>
                     </div>
                 </div>
             </div>

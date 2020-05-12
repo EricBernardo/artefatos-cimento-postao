@@ -23,7 +23,6 @@
     </div>
 </section>
 
-
 @include('includes/form')
 
 @stop
