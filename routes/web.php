@@ -73,3 +73,7 @@ Route::get('/equipe', function () {
 Route::get('/contato', function () {
     return view('pages/contact');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
