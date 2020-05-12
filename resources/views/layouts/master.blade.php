@@ -7,7 +7,7 @@
 
         <title>@yield('title') | Artefatos de cimento Portão</title>
 
-        <link rel="stylesheet" href="{{ URL::asset('/css/app.css') . '?v=' . time() }}">
+        <link rel="stylesheet" href="{{ URL::asset('/css/app.css') }}">
 
     </head>
     <body>
