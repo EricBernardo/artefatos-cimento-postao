@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,7 +36,7 @@ Route::get('/', function () {
 });
 
 Route::get('/produtos', function () {
-    $products = 
+    $products =
     [
         [
             'title' => 'Postes',
@@ -58,7 +59,7 @@ Route::get('/produtos', function () {
             'image' => 'sumidouros.jpg'
         ]
     ];
-    
+
     return view('pages/products', compact('products'));
 });
 
@@ -77,3 +78,5 @@ Route::get('/contato', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('admin/banners', 'BannersController');
