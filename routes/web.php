@@ -1,7 +1,10 @@
 <?php
 
+use Carbon\Carbon;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,28 +40,28 @@ Route::get('/', function () {
 
 Route::get('/produtos', function () {
     $products =
-    [
         [
-            'title' => 'Postes',
-            'description' => 'A Artefatos de Cimento Portão produz postes de concreto armado padrão CEEE – RGE – AESSUL dentro dos novos padrões de entrada de energia para baixa tensão.',
-            'image' => 'postes.jpg'
-        ],
-        [
-            'title' => 'Fossas',
-            'description' => 'Produzimos Fossas para o tratamento de esgoto através de sistema biológico onde a velocidade e a permanência do fluido na fossa permitem a separação da fração sólida do líquido, proporcionando digestão limitada da matéria orgânica e acúmulo dos sólidos.',
-            'image' => 'fossas.jpg'
-        ],
-        [
-            'title' => 'Filtros',
-            'description' => 'Produzimos Filtros Anaeróbicos que são destinados a filtragem do esgoto após sua passagem pela fossa. A filtragem se da através da alimentação e percolação contínua de esgotos através de um sistema interno de pedras ou pedregulhos promovendo o crescimento e a aderência de massa biológica realizando assim a clarificação dos esgotos.',
-            'image' => 'filtros.jpg'
-        ],
-        [
-            'title' => 'Sumidouros',
-            'description' => 'Produzimos Sumidouros que são unidades capazes de receber a parte líquida proveniente das fossas sépticas e têm a função de permitir sua infiltração no solo.',
-            'image' => 'sumidouros.jpg'
-        ]
-    ];
+            [
+                'title' => 'Postes',
+                'description' => 'A Artefatos de Cimento Portão produz postes de concreto armado padrão CEEE – RGE – AESSUL dentro dos novos padrões de entrada de energia para baixa tensão.',
+                'image' => 'postes.jpg'
+            ],
+            [
+                'title' => 'Fossas',
+                'description' => 'Produzimos Fossas para o tratamento de esgoto através de sistema biológico onde a velocidade e a permanência do fluido na fossa permitem a separação da fração sólida do líquido, proporcionando digestão limitada da matéria orgânica e acúmulo dos sólidos.',
+                'image' => 'fossas.jpg'
+            ],
+            [
+                'title' => 'Filtros',
+                'description' => 'Produzimos Filtros Anaeróbicos que são destinados a filtragem do esgoto após sua passagem pela fossa. A filtragem se da através da alimentação e percolação contínua de esgotos através de um sistema interno de pedras ou pedregulhos promovendo o crescimento e a aderência de massa biológica realizando assim a clarificação dos esgotos.',
+                'image' => 'filtros.jpg'
+            ],
+            [
+                'title' => 'Sumidouros',
+                'description' => 'Produzimos Sumidouros que são unidades capazes de receber a parte líquida proveniente das fossas sépticas e têm a função de permitir sua infiltração no solo.',
+                'image' => 'sumidouros.jpg'
+            ]
+        ];
 
     return view('pages/products', compact('products'));
 });
@@ -75,8 +78,32 @@ Route::get('/contato', function () {
     return view('pages/contact');
 });
 
+Route::get('sitemap', function () {
+
+    // create new sitemap object
+    $sitemap = App::make('sitemap');
+
+    $sitemap->setCache('laravel.sitemap', 60);
+
+    if (!$sitemap->isCached()) {
+
+        $date = Carbon::now();
+
+        $sitemap->add(URL::to('/'), $date, '1.0', 'daily');
+        $sitemap->add(URL::to('produtos'), $date, '0.9', 'monthly');
+        $sitemap->add(URL::to('quem-somos'), $date, '0.9', 'monthly');
+        $sitemap->add(URL::to('equipe'), $date, '0.9', 'monthly');
+        $sitemap->add(URL::to('contato'), $date, '0.9', 'monthly');
+
+    }
+
+    return $sitemap->render('xml');
+});
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::resource('admin/banners', 'BannersController');
+Route::get('admin/banners', 'BannerController@index')->name('banners.index');
+Route::get('admin/banners/create', 'BannerController@create')->name('banners.create');
+Route::post('admin/banners/store', 'BannerController@store')->name('banners.store');
+Route::get('admin/banners/show/{id}', 'BannerController@show')->name('banners.show');
+Route::put('admin/banners/update/{id}', 'BannerController@update')->name('banners.update');
