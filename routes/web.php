@@ -35,7 +35,7 @@ Route::get('/', function () {
             'image' => 'atendimento-ao-cliente.jpg'
         ]
     ];
-    return view('pages/home', compact('services'));
+    return view('site/pages/home', compact('services'));
 });
 
 Route::get('/produtos', function () {
@@ -63,19 +63,19 @@ Route::get('/produtos', function () {
             ]
         ];
 
-    return view('pages/products', compact('products'));
+    return view('site/pages/products', compact('products'));
 });
 
 Route::get('/quem-somos', function () {
-    return view('pages/about');
+    return view('site/pages/about');
 });
 
 Route::get('/equipe', function () {
-    return view('pages/team');
+    return view('site/pages/team');
 });
 
 Route::get('/contato', function () {
-    return view('pages/contact');
+    return view('site/pages/contact');
 });
 
 Route::get('sitemap', function () {
@@ -107,3 +107,4 @@ Route::get('admin/banners/create', 'BannerController@create')->name('banners.cre
 Route::post('admin/banners/store', 'BannerController@store')->name('banners.store');
 Route::get('admin/banners/show/{id}', 'BannerController@show')->name('banners.show');
 Route::put('admin/banners/update/{id}', 'BannerController@update')->name('banners.update');
+Route::delete('admin/banners/delete/{id}', 'BannerController@delete')->name('banners.delete');

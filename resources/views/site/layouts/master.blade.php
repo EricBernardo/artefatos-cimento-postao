@@ -30,7 +30,7 @@
 
         <title>@yield('title') | Artefatos de cimento Portão</title>
 
-        <link rel="stylesheet" href="{{ URL::asset('/css/app.css') }}">
+        <link rel="stylesheet" href="{{ URL::asset('/css/site/app.css') }}">
 
         <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -67,12 +67,12 @@
             @yield('content')
         </div>
 
-        @include('includes/map')
+        @include('site/includes/map')
 
         <footer class="footer">
             Copyright © 2020 Artefatos de cimento Portão – todos os direitos reservados.
         </footer>
 
-        <script src="{{ URL::asset('/js/app.js') }}"></script>
+        <script src="{{ URL::asset('/js/site/app.js') }}"></script>
     </body>
 </html>

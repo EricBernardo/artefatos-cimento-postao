@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('site.layouts.master')
 
 @section('title', 'Contato')
 
@@ -23,6 +23,6 @@
     </div>
 </section>
 
-@include('includes/form')
+@include('site/includes/form')
 
 @stop

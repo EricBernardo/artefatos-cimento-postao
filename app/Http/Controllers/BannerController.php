@@ -8,6 +8,7 @@ use App\Http\Requests\BannerRequestUpdate;
 use App\Models\Banner;
 use App\Services\BannerService;
 use Illuminate\Http\Request;
+use Symfony\Component\Console\Input\Input;
 
 class BannerController extends Controller
 {
@@ -22,12 +23,12 @@ class BannerController extends Controller
     public function index()
     {
         $items = $this->service->paginate();
-        return view('admin/banner/index', compact('items'));
+        return view('admin/pages/banner/index', compact('items'));
     }
 
     public function create()
     {
-        return view('admin/banner/create');
+        return view('admin/pages/banner/create');
     }
 
     public function store(BannerRequestStore $request)
@@ -38,7 +39,7 @@ class BannerController extends Controller
     public function show($id)
     {
         $item = $this->service->find($id);
-        return view('admin/banner/show', compact('item'));
+        return view('admin/pages/banner/show', compact('item'));
     }
 
     public function update(BannerRequestUpdate $request, $id)
@@ -46,8 +47,8 @@ class BannerController extends Controller
         return $this->service->update($request, $id);
     }
 
-    public function destroy(Banner $banner)
+    public function delete($id)
     {
-        //
+        return $this->service->delete($id);
     }
 }

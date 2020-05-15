@@ -27,7 +27,7 @@ class BannerService extends DefaultService
 
         return redirect()
         ->route('banners.create')
-        ->with('message', 'Cadastrado com sucesso!');;
+        ->with('message', 'Cadastrado com sucesso!');
 
     }
 
@@ -43,14 +43,14 @@ class BannerService extends DefaultService
 
         if($request->hasFile('image')) {
             if($image = $entity['image']) {
-                File::delete($image);
+                File::delete('storage/' . $image);
             }
             $data['image'] = $this->uploadFile($request, 'banners', 'image');
         }
 
         if($request->hasFile('image_mobile')) {
             if($image_mobile = $entity['image_mobile']) {
-                File::delete($image);
+                File::delete('storage/' . $image_mobile);
             }
             $data['image_mobile'] = $this->uploadFile($request, 'banners', 'image_mobile');
         }
@@ -60,6 +60,26 @@ class BannerService extends DefaultService
         return redirect()
         ->route('banners.show', ['id' => $id])
         ->with('message', 'Atualizado com sucesso!');
+
+    }
+
+    public function delete($id) {
+
+        $entity = $this->model->find($id);
+
+        if($image = $entity['image']) {
+            File::delete('storage/' . $image);
+        }
+
+        if($image = $entity['image_mobile']) {
+            File::delete('storage/' . $image);
+        }
+
+        $entity->delete();
+
+        return redirect()
+        ->route('banners.index')
+        ->with('message', 'Registro excluido com sucesso!');
 
     }
 
