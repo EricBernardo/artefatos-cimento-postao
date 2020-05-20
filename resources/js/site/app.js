@@ -1,4 +1,6 @@
+require('./../bootstrap');
 require('./map');
+require('./lead')
 
 const simpleParallax = require('simple-parallax-js');
 

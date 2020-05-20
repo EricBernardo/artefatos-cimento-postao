@@ -1,5 +1,13 @@
 <?php
 
+if (!session_id()) {
+    session_start();
+}
+
+if (!isset($_SESSION['last_url']) || !$_SESSION['last_url']) {
+    $_SESSION['last_url'] = @$_SERVER['HTTP_REFERER'];
+}
+
 use Carbon\Carbon;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
@@ -23,8 +31,9 @@ Route::get('/quem-somos', 'AboutController@index')->name('abouts.index');
 Route::get('/equipe', 'TeamController@index')->name('teams.index');
 Route::get('/contato', 'ContactController@index')->name('contacts.index');
 
+Route::post('/lead', 'LeadController@store')->name('leads.store');
 
-Route::get('sitemap', function () {
+Route::get('sitemap.xml', function () {
 
     // create new sitemap object
     $sitemap = App::make('sitemap');
@@ -40,7 +49,6 @@ Route::get('sitemap', function () {
         $sitemap->add(URL::to('quem-somos'), $date, '0.9', 'monthly');
         $sitemap->add(URL::to('equipe'), $date, '0.9', 'monthly');
         $sitemap->add(URL::to('contato'), $date, '0.9', 'monthly');
-
     }
 
     return $sitemap->render('xml');

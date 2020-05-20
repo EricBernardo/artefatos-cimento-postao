@@ -35,7 +35,7 @@
             <link rel="icon" href="{{ url('storage/' . $setting['favicon']) }}" />
         @endif
 
-        <link rel="stylesheet" href="{{ URL::asset('/css/site/app.css') }}">
+        <link rel="stylesheet" href="{{ URL::asset('/css/site/app.css?v=') . env('APP_VERSION') }}">
 
         <!-- Google Tag Manager -->
         <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -83,6 +83,6 @@
             @endif
         </footer>
 
-        <script src="{{ URL::asset('/js/site/app.js') }}"></script>
+        <script src="{{ URL::asset('/js/site/app.js?v=') . env('APP_VERSION') }}"></script>
     </body>
 </html>
