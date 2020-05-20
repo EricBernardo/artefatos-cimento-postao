@@ -2,6 +2,7 @@
 
 return [
     'banners' => 'Banners',
+    'home_products' => 'Destaques',
     'services' => 'Serviços',
     'products' => 'Produtos',
     'abouts' => 'Quem somos',

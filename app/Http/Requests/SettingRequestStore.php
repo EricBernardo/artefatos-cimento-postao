@@ -36,7 +36,8 @@ class SettingRequestStore extends FormRequest
             'facebook_link' => 'required',
             'copyright' => 'required',
             'order' => 'required',
-            'status' => 'required'
+            'status' => 'required',
+            'email' => 'required|email'
         ];
     }
 }

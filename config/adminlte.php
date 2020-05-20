@@ -219,6 +219,11 @@ return [
             'icon'        => 'far fa-fw fa-circle'
         ],
         [
+            'text'        => 'home_products',
+            'url'         => 'admin/home_products',
+            'icon'        => 'far fa-fw fa-circle'
+        ],
+        [
             'text'        => 'services',
             'url'         => 'admin/services',
             'icon'        => 'far fa-fw fa-circle'

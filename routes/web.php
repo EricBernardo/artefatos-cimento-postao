@@ -46,8 +46,9 @@ Route::get('sitemap', function () {
     return $sitemap->render('xml');
 });
 
-Route::get('admin/login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('admin/logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('admin', 'Auth\LoginController@showLoginForm')->name('admin');
+Route::get('admin/login', 'Auth\LoginController@showLoginForm')->name('admin.login');
+Route::post('admin/logout', 'Auth\LoginController@logout')->name('admin.logout');
 
 Auth::routes();
 
@@ -106,3 +107,10 @@ Route::post('admin/seo/store', 'Auth\SeoController@store')->name('seo.store');
 Route::get('admin/seo/show/{id}', 'Auth\SeoController@show')->name('seo.show');
 Route::put('admin/seo/update/{id}', 'Auth\SeoController@update')->name('seo.update');
 Route::delete('admin/seo/delete/{id}', 'Auth\SeoController@delete')->name('seo.delete');
+
+Route::get('admin/home_products', 'Auth\HomeProductController@index')->name('home_products.index');
+Route::get('admin/home_products/create', 'Auth\HomeProductController@create')->name('home_products.create');
+Route::post('admin/home_products/store', 'Auth\HomeProductController@store')->name('home_products.store');
+Route::get('admin/home_products/show/{id}', 'Auth\HomeProductController@show')->name('home_products.show');
+Route::put('admin/home_products/update/{id}', 'Auth\HomeProductController@update')->name('home_products.update');
+Route::delete('admin/home_products/delete/{id}', 'Auth\HomeProductController@delete')->name('home_products.delete');

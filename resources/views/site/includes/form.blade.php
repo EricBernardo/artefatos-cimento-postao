@@ -25,6 +25,9 @@
                         <a href="tel:{{ onlyNumber($setting['phone_3']) }}" target="_blank">{{ $setting['phone_3'] }}</a>
                     </p>
                     <p>
+                        <a href="mailto:{{ $setting['email'] }}" target="_blank">{{ $setting['email']}}</a>
+                    </p>
+                    <p>
                         <a class="facebook-link" href="{{ $setting['facebook_link'] }}" target="_blank">
                             <img src="{{ url('images/facebook-icon.png')}}" alt="Visite nossa página no Facebook" />
                         </a>

@@ -29,6 +29,7 @@ class SettingService extends DefaultService
             'facebook_link' => $request->get('facebook_link'),
             'copyright' => $request->get('copyright'),
             'order' => $request->get('order'),
+            'email' => $request->get('email'),
             'status' => $request->get('status') == '1' ? true : false
         ]);
 
@@ -53,6 +54,7 @@ class SettingService extends DefaultService
             'facebook_link' => $request->get('facebook_link'),
             'copyright' => $request->get('copyright'),
             'order' => $request->get('order'),
+            'email' => $request->get('email'),
             'status' => $request->get('status') == '1' ? true : false
         ];
 

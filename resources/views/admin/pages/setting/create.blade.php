@@ -16,7 +16,11 @@
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="inputNameSite">Nome do site</label>
-                            <input type="text" name="name_site" class="form-control" id="inputNameSite" placeholder="Título" value="{{ request()->old('name_site') }}">
+                            <input type="text" name="name_site" class="form-control" id="inputNameSite" placeholder="Nome do site" value="{{ request()->old('name_site') }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail">E-mail</label>
+                            <input type="text" name="email" class="form-control" id="inputEmail" placeholder="E-mail" value="{{ request()->old('email') }}">
                         </div>
                         <div class="form-group">
                             <label for="inputLogo">Logo</label>

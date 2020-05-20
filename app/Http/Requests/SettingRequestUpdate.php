@@ -36,7 +36,8 @@ class SettingRequestUpdate extends FormRequest
             'copyright' => 'required',
             'facebook_link' => 'required',
             'order' => 'required',
-            'status' => 'required'
+            'status' => 'required',
+            'email' => 'required|email'
         ];
     }
 }

@@ -19,6 +19,7 @@ class Setting extends Model
         'copyright',
         'facebook_link',
         'order',
-        'status'
+        'status',
+        'email'
     ];
 }

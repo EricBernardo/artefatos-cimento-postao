@@ -21,6 +21,10 @@
                             <input type="text" name="name_site" class="form-control" id="inputNameSite" placeholder="Título" value="{{ $item['name_site'] }}">
                         </div>
                         <div class="form-group">
+                            <label for="inputEmail">E-mail</label>
+                            <input type="text" name="email" class="form-control" id="inputEmail" placeholder="E-mail" value="{{ $item['email'] }}">
+                        </div>
+                        <div class="form-group">
                             <label for="inputLogo">Logo</label>
                             <div class="input-group">
                                 <div class="custom-file">
