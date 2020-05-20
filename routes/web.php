@@ -1,6 +1,10 @@
 <?php
 
+use Carbon\Carbon;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,63 +17,92 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $services = [
-        [
-            'title' => 'Entrega agendada',
-            'description' => 'Ao trabalhar com o(a) Artefatos cimento portão, nossos clientes experimentam um nível de profissionalismo exemplar. Todos os nossos serviços, este em particular, foram criados para facilitar a sua vida. Você pode contar conosco para encontrar os melhores produtos do mercado, assim como um serviço de atendimento ao consumidor da mais alta qualidade.',
-            'image' => 'entrega-agendada.jpg'
-        ],
-        [
-            'title' => 'Consulta para compras',
-            'description' => 'Este é um dos nossos serviços mais populares. Fez uma grande diferença para muitos de nossos clientes, e é oferecido no mais alto nível de excelência. Com ele, asseguramos que todos os detalhes sejam simples, dinâmicos e executados em tempo útil. Sempre que trabalhar com o(a) Artefatos cimento portão, você pode confiar que estará em ótimas mãos.',
-            'image' => 'consulta-para-compras.jpg'
-        ],
-        [
-            'title' => 'Atendimento ao cliente',
-            'description' => 'Utilizado pela maioria dos clientes, esse serviço é um dos responsáveis pelo nosso sucesso. Todos os nossos serviços são de alta qualidade, e pode contar conosco para cuidar de tudo o que você precisar. Temos orgulho do excelente serviço de atendimento ao cliente que fornecemos, e garantimos a sua satisfação total no tratamento oferecido por nossa equipe. Basta entrar em contato para saber como podemos te ajudar',
-            'image' => 'atendimento-ao-cliente.jpg'
-        ]
-    ];
-    return view('pages/home', compact('services'));
+Route::get('/', 'HomeController@index')->name('home.index');
+Route::get('/produtos', 'ProductController@index')->name('products.index');
+Route::get('/quem-somos', 'AboutController@index')->name('abouts.index');
+Route::get('/equipe', 'TeamController@index')->name('teams.index');
+Route::get('/contato', 'ContactController@index')->name('contacts.index');
+
+
+Route::get('sitemap', function () {
+
+    // create new sitemap object
+    $sitemap = App::make('sitemap');
+
+    $sitemap->setCache('laravel.sitemap', 60);
+
+    if (!$sitemap->isCached()) {
+
+        $date = Carbon::now();
+
+        $sitemap->add(URL::to('/'), $date, '1.0', 'daily');
+        $sitemap->add(URL::to('produtos'), $date, '0.9', 'monthly');
+        $sitemap->add(URL::to('quem-somos'), $date, '0.9', 'monthly');
+        $sitemap->add(URL::to('equipe'), $date, '0.9', 'monthly');
+        $sitemap->add(URL::to('contato'), $date, '0.9', 'monthly');
+
+    }
+
+    return $sitemap->render('xml');
 });
 
-Route::get('/produtos', function () {
-    $products = 
-    [
-        [
-            'title' => 'Postes',
-            'description' => 'A Artefatos de Cimento Portão produz postes de concreto armado padrão CEEE – RGE – AESSUL dentro dos novos padrões de entrada de energia para baixa tensão.',
-            'image' => 'postes.jpg'
-        ],
-        [
-            'title' => 'Fossas',
-            'description' => 'Produzimos Fossas para o tratamento de esgoto através de sistema biológico onde a velocidade e a permanência do fluido na fossa permitem a separação da fração sólida do líquido, proporcionando digestão limitada da matéria orgânica e acúmulo dos sólidos.',
-            'image' => 'fossas.jpg'
-        ],
-        [
-            'title' => 'Filtros',
-            'description' => 'Produzimos Filtros Anaeróbicos que são destinados a filtragem do esgoto após sua passagem pela fossa. A filtragem se da através da alimentação e percolação contínua de esgotos através de um sistema interno de pedras ou pedregulhos promovendo o crescimento e a aderência de massa biológica realizando assim a clarificação dos esgotos.',
-            'image' => 'filtros.jpg'
-        ],
-        [
-            'title' => 'Sumidouros',
-            'description' => 'Produzimos Sumidouros que são unidades capazes de receber a parte líquida proveniente das fossas sépticas e têm a função de permitir sua infiltração no solo.',
-            'image' => 'sumidouros.jpg'
-        ]
-    ];
-    
-    return view('pages/products', compact('products'));
-});
+Route::get('admin/login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('admin/logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::get('/quem-somos', function () {
-    return view('pages/about');
-});
+Auth::routes();
 
-Route::get('/equipe', function () {
-    return view('pages/team');
-});
+Route::get('admin/banners', 'Auth\BannerController@index')->name('banners.index');
+Route::get('admin/banners/create', 'Auth\BannerController@create')->name('banners.create');
+Route::post('admin/banners/store', 'Auth\BannerController@store')->name('banners.store');
+Route::get('admin/banners/show/{id}', 'Auth\BannerController@show')->name('banners.show');
+Route::put('admin/banners/update/{id}', 'Auth\BannerController@update')->name('banners.update');
+Route::delete('admin/banners/delete/{id}', 'Auth\BannerController@delete')->name('banners.delete');
 
-Route::get('/contato', function () {
-    return view('pages/contact');
-});
+Route::get('admin/services', 'Auth\ServiceController@index')->name('services.index');
+Route::get('admin/services/create', 'Auth\ServiceController@create')->name('services.create');
+Route::post('admin/services/store', 'Auth\ServiceController@store')->name('services.store');
+Route::get('admin/services/show/{id}', 'Auth\ServiceController@show')->name('services.show');
+Route::put('admin/services/update/{id}', 'Auth\ServiceController@update')->name('services.update');
+Route::delete('admin/services/delete/{id}', 'Auth\ServiceController@delete')->name('services.delete');
+
+Route::get('admin/products', 'Auth\ProductController@index')->name('products.index');
+Route::get('admin/products/create', 'Auth\ProductController@create')->name('products.create');
+Route::post('admin/products/store', 'Auth\ProductController@store')->name('products.store');
+Route::get('admin/products/show/{id}', 'Auth\ProductController@show')->name('products.show');
+Route::put('admin/products/update/{id}', 'Auth\ProductController@update')->name('products.update');
+Route::delete('admin/products/delete/{id}', 'Auth\ProductController@delete')->name('products.delete');
+
+Route::get('admin/abouts', 'Auth\AboutController@index')->name('abouts.index');
+Route::get('admin/abouts/create', 'Auth\AboutController@create')->name('abouts.create');
+Route::post('admin/abouts/store', 'Auth\AboutController@store')->name('abouts.store');
+Route::get('admin/abouts/show/{id}', 'Auth\AboutController@show')->name('abouts.show');
+Route::put('admin/abouts/update/{id}', 'Auth\AboutController@update')->name('abouts.update');
+Route::delete('admin/abouts/delete/{id}', 'Auth\AboutController@delete')->name('abouts.delete');
+
+Route::get('admin/teams', 'Auth\TeamController@index')->name('teams.index');
+Route::get('admin/teams/create', 'Auth\TeamController@create')->name('teams.create');
+Route::post('admin/teams/store', 'Auth\TeamController@store')->name('teams.store');
+Route::get('admin/teams/show/{id}', 'Auth\TeamController@show')->name('teams.show');
+Route::put('admin/teams/update/{id}', 'Auth\TeamController@update')->name('teams.update');
+Route::delete('admin/teams/delete/{id}', 'Auth\TeamController@delete')->name('teams.delete');
+
+Route::get('admin/contacts', 'Auth\ContactController@index')->name('contacts.index');
+Route::get('admin/contacts/create', 'Auth\ContactController@create')->name('contacts.create');
+Route::post('admin/contacts/store', 'Auth\ContactController@store')->name('contacts.store');
+Route::get('admin/contacts/show/{id}', 'Auth\ContactController@show')->name('contacts.show');
+Route::put('admin/contacts/update/{id}', 'Auth\ContactController@update')->name('contacts.update');
+Route::delete('admin/contacts/delete/{id}', 'Auth\ContactController@delete')->name('contacts.delete');
+
+Route::get('admin/settings', 'Auth\SettingController@index')->name('settings.index');
+Route::get('admin/settings/create', 'Auth\SettingController@create')->name('settings.create');
+Route::post('admin/settings/store', 'Auth\SettingController@store')->name('settings.store');
+Route::get('admin/settings/show/{id}', 'Auth\SettingController@show')->name('settings.show');
+Route::put('admin/settings/update/{id}', 'Auth\SettingController@update')->name('settings.update');
+Route::delete('admin/settings/delete/{id}', 'Auth\SettingController@delete')->name('settings.delete');
+
+Route::get('admin/seo', 'Auth\SeoController@index')->name('seo.index');
+Route::get('admin/seo/create', 'Auth\SeoController@create')->name('seo.create');
+Route::post('admin/seo/store', 'Auth\SeoController@store')->name('seo.store');
+Route::get('admin/seo/show/{id}', 'Auth\SeoController@show')->name('seo.show');
+Route::put('admin/seo/update/{id}', 'Auth\SeoController@update')->name('seo.update');
+Route::delete('admin/seo/delete/{id}', 'Auth\SeoController@delete')->name('seo.delete');

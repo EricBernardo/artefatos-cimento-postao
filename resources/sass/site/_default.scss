@@ -1,0 +1,36 @@
+@import './_header';
+@import './_form';
+@import './_map';
+
+body {
+    margin-top: 90px;
+}
+
+form input,
+form textarea {
+    padding: 20px;
+    border: 1px solid #dadada;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+}
+
+form button {
+    border-radius: 5px;
+    width: 100%;
+    padding: 20px;
+    background-color: #ff4c00;
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+section {
+    position: relative;
+}
+
+h2,
+h3 {
+    font-weight: normal;
+}
