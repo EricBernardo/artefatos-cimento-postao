@@ -20,12 +20,12 @@
                     <b>{{ $setting['name_site'] }}</b>
                     <p>{!! nl2br($setting['address']) !!}</p>
                     <p class="phone">
-                        <a href="tel:{{ onlyNumber($setting['phone_1']) }}">{{ $setting['phone_1'] }}</a> |
-                        <a href="tel:{{ onlyNumber($setting['phone_2']) }}">{{ $setting['phone_2'] }}</a> |
-                        <a href="tel:{{ onlyNumber($setting['phone_3']) }}">{{ $setting['phone_3'] }}</a>
+                        <a href="tel:{{ onlyNumber($setting['phone_1']) }}" target="_blank">{{ $setting['phone_1'] }}</a> |
+                        <a href="tel:{{ onlyNumber($setting['phone_2']) }}" target="_blank">{{ $setting['phone_2'] }}</a> |
+                        <a href="tel:{{ onlyNumber($setting['phone_3']) }}" target="_blank">{{ $setting['phone_3'] }}</a>
                     </p>
                     <p>
-                        <a class="facebook-link" href="{{ $setting['facebook_link'] }}">
+                        <a class="facebook-link" href="{{ $setting['facebook_link'] }}" target="_blank">
                             <img src="{{ url('images/facebook-icon.png')}}" alt="Visite nossa página no Facebook" />
                         </a>
                     </p>
