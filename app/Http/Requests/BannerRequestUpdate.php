@@ -26,6 +26,7 @@ class BannerRequestUpdate extends FormRequest
         return [
             'title' => 'required',
             'subtitle' => 'required',
+            'order' => 'required',
             'image' => 'image',
             'image_mobile' => 'image',
             'status' => 'required'

@@ -35,7 +35,7 @@
                             </div>
                             <img height="200px"
                                 src="{{ url("storage/{$item['image']}") }}"
-                                alt="{{ $item['title'] }}" />
+                                />
                         </div>
                         <div class="form-group">
                             <label for="inputImageMobile">Imagem mobile</label>
@@ -46,7 +46,12 @@
                             </div>
                             <img height="200px"
                                 src="{{ url("storage/{$item['image_mobile']}") }}"
-                                alt="{{ $item['title'] }}" />
+                                />
+                        </div>
+                        <div class="form-group">
+                            <label for="inputOrder">Ordem</label>
+                            <input type="number" name="order" class="form-control" id="inputOrder" placeholder="Ordem"
+                                value="{{ $item['order'] }}">
                         </div>
                         <div class="form-group">
                             <label for="inputActive">Status</label>

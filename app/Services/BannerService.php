@@ -20,6 +20,7 @@ class BannerService extends DefaultService
         $this->model->insert([
             'title' => $request->get('title'),
             'subtitle' => $request->get('subtitle'),
+            'order' => $request->get('order'),
             'image' => $image,
             'image_mobile' => $image_mobile,
             'status' => $request->get('status') == '1' ? true : false,
@@ -38,6 +39,7 @@ class BannerService extends DefaultService
         $data = [
             'title' => $request->get('title'),
             'subtitle' => $request->get('subtitle'),
+            'order' => $request->get('order'),
             'status' => $request->get('status') == '1' ? true : false,
         ];
 

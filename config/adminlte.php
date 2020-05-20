@@ -46,7 +46,7 @@ return [
     */
 
     'logo' => '<b>AC</b>Portão',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo_img' => 'vendor/adminlte/dist/img/logo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -169,9 +169,9 @@ return [
 
     'dashboard_url' => 'admin/banners',
 
-    'logout_url' => 'logout',
+    'logout_url' => 'admin/logout',
 
-    'login_url' => 'login',
+    'login_url' => 'admin/login',
 
     'register_url' => 'register',
 
@@ -208,11 +208,6 @@ return [
     */
 
     'menu' => [
-        // [
-        //     'text' => 'search',
-        //     'search' => true,
-        //     'topnav' => true,
-        // ],
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
@@ -221,70 +216,48 @@ return [
         [
             'text'        => 'banners',
             'url'         => 'admin/banners',
-            'icon'        => 'far fa-fw fa-image'
+            'icon'        => 'far fa-fw fa-circle'
         ],
-        // ['header' => 'account_settings'],
-        // [
-        //     'text' => 'profile',
-        //     'url'  => 'admin/settings',
-        //     'icon' => 'fas fa-fw fa-user',
-        // ],
-        // [
-        //     'text' => 'change_password',
-        //     'url'  => 'admin/settings',
-        //     'icon' => 'fas fa-fw fa-lock',
-        // ],
-        // [
-        //     'text'    => 'multilevel',
-        //     'icon'    => 'fas fa-fw fa-share',
-        //     'submenu' => [
-        //         [
-        //             'text' => 'level_one',
-        //             'url'  => '#',
-        //         ],
-        //         [
-        //             'text'    => 'level_one',
-        //             'url'     => '#',
-        //             'submenu' => [
-        //                 [
-        //                     'text' => 'level_two',
-        //                     'url'  => '#',
-        //                 ],
-        //                 [
-        //                     'text'    => 'level_two',
-        //                     'url'     => '#',
-        //                     'submenu' => [
-        //                         [
-        //                             'text' => 'level_three',
-        //                             'url'  => '#',
-        //                         ],
-        //                         [
-        //                             'text' => 'level_three',
-        //                             'url'  => '#',
-        //                         ],
-        //                     ],
-        //                 ],
-        //             ],
-        //         ],
-        //         [
-        //             'text' => 'level_one',
-        //             'url'  => '#',
-        //         ],
-        //     ],
-        // ],
-        // ['header' => 'labels'],
-        // [
-        //     'text'       => 'important',
-        //     'icon_color' => 'red',
-        // ],
-        // [
-        //     'text'       => 'warning',
-        //     'icon_color' => 'yellow',
-        // ],
-        // [
-        //     'text'       => 'information',
-        //     'icon_color' => 'cyan',
-        // ],
+        [
+            'text'        => 'services',
+            'url'         => 'admin/services',
+            'icon'        => 'far fa-fw fa-circle'
+        ],
+        [
+            'text'        => 'products',
+            'url'         => 'admin/products',
+            'icon'        => 'far fa-fw fa-circle'
+        ],
+        [
+            'text'        => 'abouts',
+            'url'         => 'admin/abouts',
+            'icon'        => 'far fa-fw fa-circle'
+        ],
+        [
+            'text'        => 'teams',
+            'url'         => 'admin/teams',
+            'icon'        => 'far fa-fw fa-circle'
+        ],
+        [
+            'text'        => 'contacts',
+            'url'         => 'admin/contacts',
+            'icon'        => 'far fa-fw fa-circle'
+        ],
+        [
+            'text'        => 'settings',
+            'url'         => 'admin/settings',
+            'icon'        => 'far fa-fw fa-circle'
+        ],
+        [
+            'text'        => 'seo',
+            'url'         => 'admin/seo',
+            'icon'        => 'far fa-fw fa-circle'
+        ],
+        [
+            'text'        => 'register_user',
+            'url'         => 'register',
+            'icon'        => 'far fa-fw fa-circle'
+        ]
     ],
 
     /*

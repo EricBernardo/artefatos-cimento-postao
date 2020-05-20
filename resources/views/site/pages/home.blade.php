@@ -4,7 +4,7 @@
 
 @section('content')
 
-    @include('site/includes/banner')
+    @include('site/includes/banner', ['banner' => $banner])
 
     @include('site/includes/blocks', ['title' => 'Nossos serviços', 'results' => $services])
 

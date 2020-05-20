@@ -25,6 +25,7 @@
                                 <th style="width: 10px">#</th>
                                 <th>Título</th>
                                 <th>Imagem</th>
+                                <th>Ordem</th>
                                 <th>Status</th>
                                 <th>-</th>
                                 <th>-</th>
@@ -37,7 +38,8 @@
                                     <td>{{ $item['title'] }}</td>
                                     <td><img height="50px"
                                             src="{{ url("storage/{$item['image']}") }}"
-                                            alt="{{ $item['title'] }}" /></td>
+                                            /></td>
+                                    <td>{{ $item['order'] }}</td>
                                     <td>{{ $item['status'] ? 'Ativo' : 'Inativo' }}
                                     </td>
                                     <td>

@@ -8,27 +8,53 @@
 
         <meta property="og:locale" content="pt_BR">
 
-        <meta name="description" content="A Artefatos de Cimento Portão produz peças de concreto aliando tecnologia e rigoroso controle para satisfazer as necessidades dos seus clientes.">
+        @if($seo)
 
-        <meta name="keywords" content="postes, rge, concreto, luz, fossa, filtros, sumidouros">
+            <meta name="description" content="{{ $seo['description'] }}">
 
-        <meta property="og:type" content="website" />
+            <meta name="keywords" content="{{ $seo['keywords'] }}">
 
-        <meta property="og:title" content="@yield('title') | Artefatos de cimento Portão" />
+            <meta property="og:type" content="website" />
 
-        <meta property="og:description" content="A Artefatos de Cimento Portão produz peças de concreto aliando tecnologia e rigoroso controle para satisfazer as necessidades dos seus clientes." />
+            <meta property="og:title" content="{{ $seo['title'] }}" />
+
+            <meta property="og:description" content="{{ $seo['description'] }}" />
+
+            <title>{{ $seo['title'] }}</title>
+
+        @else
+
+            <meta name="description" content="A Artefatos de Cimento Portão produz peças de concreto aliando tecnologia e rigoroso controle para satisfazer as necessidades dos seus clientes.">
+
+            <meta name="keywords" content="postes, rge, concreto, luz, fossa, filtros, sumidouros">
+
+            <meta property="og:type" content="website" />
+
+            <meta property="og:description" content="A Artefatos de Cimento Portão produz peças de concreto aliando tecnologia e rigoroso controle para satisfazer as necessidades dos seus clientes." />
+
+            @if($setting && $setting['name_site'])
+                <meta property="og:title" content="@yield('title') | {{ $setting['name_site'] }}" />
+                <title>@yield('title') | {{ $setting['name_site'] }}</title>
+            @else
+                <meta property="og:title" content="@yield('title') | Artefatos de cimento Portão" />
+                <title>@yield('title') | Artefatos de cimento Portão</title>
+            @endif
+
+        @endif
+
+        <meta property="og:site_name" content="Artefatos de cimento Portão" />
 
         <meta property="og:image" content="{{ URL::current() }}" />
 
         <meta property="og:url" content="{{ URL::current() }}" />
 
-        <meta property="og:site_name" content="Artefatos de cimento Portão" />
-
         <link rel="canonical" href="{{ URL::current() }}" />
 
-        <link rel="icon" href="{{URL::asset('/images/favicon.png')}}" />
+        @if($setting && $setting['favicon'])
+            <link rel="icon" href="{{ url('storage/' . $setting['favicon']) }}" />
+        @endif
 
-        <title>@yield('title') | Artefatos de cimento Portão</title>
+
 
         <link rel="stylesheet" href="{{ URL::asset('/css/site/app.css') }}">
 
@@ -49,9 +75,12 @@
         <!-- End Google Tag Manager (noscript) -->
 
         <header class="header">
-            <a href="/" class="logo">
-                <img src="{{URL::asset('/images/logo.png')}}" alt="Artefatos de cimento Portão" />
-            </a>
+            @if($setting && $setting['logo'])
+                <a href="/" class="logo">
+                    <img src="{{ url('storage/' . $setting['logo'])}}" alt="{{ $setting['name_site'] }}" />
+                </a>
+            @endif
+
             <input class="menu-btn" type="checkbox" id="menu-btn" />
             <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
             <ul class="menu">
@@ -70,7 +99,9 @@
         @include('site/includes/map')
 
         <footer class="footer">
-            Copyright © 2020 Artefatos de cimento Portão – todos os direitos reservados.
+            @if($setting && $setting['copyright'])
+                {{ $setting['copyright'] }}
+            @endif
         </footer>
 
         <script src="{{ URL::asset('/js/site/app.js') }}"></script>

@@ -26,6 +26,7 @@ class BannerRequestStore extends FormRequest
         return [
             'title' => 'required',
             'subtitle' => 'required',
+            'order' => 'required',
             'image' => 'required|image',
             'image_mobile' => 'required|image',
             'status' => 'required'

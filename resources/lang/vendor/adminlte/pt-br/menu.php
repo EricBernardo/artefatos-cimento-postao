@@ -1,7 +1,15 @@
 <?php
 
 return [
-    'banners' => 'Banners'
+    'banners' => 'Banners',
+    'services' => 'Serviços',
+    'products' => 'Produtos',
+    'abouts' => 'Quem somos',
+    'teams' => 'Nossa equipe',
+    'contacts' => 'Contatos',
+    'settings' => 'Configurações',
+    'seo' => 'SEO',
+    'register_user' => 'Registrar usuário'
     // 'main_navigation'               => 'Navegação Principal',
     // 'blog'                          => 'Blog',
     // 'pages'                         => 'Página',

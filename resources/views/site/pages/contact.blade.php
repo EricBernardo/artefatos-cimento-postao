@@ -7,18 +7,17 @@
 <section>
     <div class="contact">
         <div class="contact__items">
-            <div class="contact__image">
-                <img src="{{URL::asset('/images/contato.jpg')}}" alt="Contato" />
-            </div>
-            <div class="contact__desctiption">
-                <p>HORÁRIO DE ATENDIMENTO</p>
-                <p>Venha nos visitar</p>
-                <br/>
-                <p>Seg - Qui: 08:00–11:30, 13:00–17:30</p>
-                <p>Sex: 08:00–11:30, 13:00–16:30</p>
-                <p>Sáb: 08:00–11:30</p>
-                <p>Dom: fechado</p>
-            </div>
+            @if($contact)
+                <div class="contact__image">
+                    <img src="{{url('storage/' . $contact['image'])}}" alt="{{ $contact['title'] }}" />
+                </div>
+                <div class="contact__desctiption">
+                    <p>{{ $contact['title'] }}</p>
+                    <p>{{ $contact['subtitle'] }}</p>
+                    <br/>
+                    <p>{!! nl2br($contact['description']) !!}</p>
+                </div>
+            @endif
         </div>
     </div>
 </section>

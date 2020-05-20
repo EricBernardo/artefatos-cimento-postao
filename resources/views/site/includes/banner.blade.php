@@ -1,9 +1,11 @@
-<section>
-    <div class="banner">        
-        <img class="banner__img" src="{{URL::asset('/images/' . (isMobile() ? 'banner-mobile.jpg' : 'banner.jpg'))}}" alt="Bem-vindo(a) a Artefatos de cimentos Portão. Soluções em peças de concreto">
-        <div class="banner__text">
-            <h1 class="banner__title">Bem-vindo(a) a Artefatos de cimentos Portão</h1>
-            <h2 class="banner__subtitle">Soluções em peças de concreto</h2>
+@if($banner)
+    <section>
+        <div class="banner">
+            <img class="banner__img" src="{{ url('storage/' . (isMobile() ? $banner['image_mobile'] : $banner['image']))}}" alt="{{ $banner['title'] }}">
+            <div class="banner__text">
+                <h1 class="banner__title">{{ $banner['title'] }}</h1>
+                <h2 class="banner__subtitle">{{ $banner['subtitle'] }}</h2>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+@endif

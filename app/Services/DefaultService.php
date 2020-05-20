@@ -6,6 +6,13 @@ class DefaultService
 {
     protected $model;
 
+    public function first() {
+        return $this->model->where('status', 1)->orderBy('order')->first();
+    }
+    public function all() {
+        return $this->model->where('status', 1)->orderBy('order')->get();
+    }
+
     public function paginate() {
         return $this->model->paginate();
     }

@@ -39,6 +39,11 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label for="inputOrder">Ordem</label>
+                            <input type="number" name="order" class="form-control" id="inputOrder" placeholder="Ordem"
+                                value="{{ request()->old('order') }}">
+                        </div>
+                        <div class="form-group">
                             <label for="inputActive">Status</label>
                             <select class="form-control" name="status">
                                 <option value="1" {{ request()->old('status') === '1' ? 'selected' : ''}}>Ativo</option>

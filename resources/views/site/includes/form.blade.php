@@ -15,10 +15,21 @@
             <div class="form__desctiption">
                 <b>Ou melhor, venha nos visitar.</b>
                 <p>Nossos clientes são importantes para nós. Ficaríamos contentes em receber a sua visita durante nosso horário comercial.</p>
-                <a class="whatsapp" href="https://wa.me/555199762155" target="_blank">Envie uma mensagem</a>
-                <b>Artefatos de cimento Portão</b>
-                <p>Rua Garces, 493 - Rincão do Cascalho, Portão - RS, 93180-000</p>
-                <p class="phone"><a href="tel:5199762155">51 9976-2155</a> | <a href="tel:5199272155">51 9927-2155</a> | <a href="tel:5135627199">51 3562-7199</a></p>
+                @if($setting)
+                    <a class="whatsapp" href="https://wa.me/55{{ onlyNumber($setting['whatsapp']) }}" target="_blank">Envie uma mensagem</a>
+                    <b>{{ $setting['name_site'] }}</b>
+                    <p>{!! nl2br($setting['address']) !!}</p>
+                    <p class="phone">
+                        <a href="tel:{{ onlyNumber($setting['phone_1']) }}">{{ $setting['phone_1'] }}</a> |
+                        <a href="tel:{{ onlyNumber($setting['phone_2']) }}">{{ $setting['phone_2'] }}</a> |
+                        <a href="tel:{{ onlyNumber($setting['phone_3']) }}">{{ $setting['phone_3'] }}</a>
+                    </p>
+                    <p>
+                        <a class="facebook-link" href="{{ $setting['facebook_link'] }}">
+                            <img src="{{ url('images/facebook-icon.png')}}" alt="Visite nossa página no Facebook" />
+                        </a>
+                    </p>
+                @endif
             </div>
         </div>
     </div>

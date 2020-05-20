@@ -35,7 +35,8 @@
         flex-direction: column;
         padding-left: 50px;
 
-        p, b {
+        p,
+        b {
             padding-bottom: 20px;
         }
 
@@ -47,6 +48,7 @@
             a {
                 color: #cf3e00;
                 text-decoration: none;
+
                 &:hover {
                     color: #791f00;
                 }
@@ -65,6 +67,7 @@
                 left: 25px;
                 position: absolute;
             }
+
             cursor: pointer;
             color: #fff;
             background: #455a64;
@@ -78,12 +81,17 @@
             text-align: center;
         }
 
+        .facebook-link img {
+            width: 24px;
+        }
+
     }
 
     @media (max-width: 768px) {
         &__title {
             font-size: 32px;
         }
+
         &__items {
             flex-direction: column;
         }
@@ -98,10 +106,10 @@
             &::before {
                 left: 20px;
             }
+
             margin: 0 auto;
             margin-bottom: 20px;
         }
     }
 
 }
-
