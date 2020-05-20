@@ -8,53 +8,32 @@
 
         <meta property="og:locale" content="pt_BR">
 
+        <meta property="og:type" content="website" />
+
         @if($seo)
 
             <meta name="description" content="{{ $seo['description'] }}">
 
             <meta name="keywords" content="{{ $seo['keywords'] }}">
 
-            <meta property="og:type" content="website" />
-
             <meta property="og:title" content="{{ $seo['title'] }}" />
 
             <meta property="og:description" content="{{ $seo['description'] }}" />
 
+            <meta property="og:image" content="{{ url("storage/" . $seo['image']) }}" />
+
             <title>{{ $seo['title'] }}</title>
 
-        @else
-
-            <meta name="description" content="A Artefatos de Cimento Portão produz peças de concreto aliando tecnologia e rigoroso controle para satisfazer as necessidades dos seus clientes.">
-
-            <meta name="keywords" content="postes, rge, concreto, luz, fossa, filtros, sumidouros">
-
-            <meta property="og:type" content="website" />
-
-            <meta property="og:description" content="A Artefatos de Cimento Portão produz peças de concreto aliando tecnologia e rigoroso controle para satisfazer as necessidades dos seus clientes." />
-
-            @if($setting && $setting['name_site'])
-                <meta property="og:title" content="@yield('title') | {{ $setting['name_site'] }}" />
-                <title>@yield('title') | {{ $setting['name_site'] }}</title>
-            @else
-                <meta property="og:title" content="@yield('title') | Artefatos de cimento Portão" />
-                <title>@yield('title') | Artefatos de cimento Portão</title>
-            @endif
-
         @endif
-
-        <meta property="og:site_name" content="Artefatos de cimento Portão" />
-
-        <meta property="og:image" content="{{ URL::current() }}" />
 
         <meta property="og:url" content="{{ URL::current() }}" />
 
         <link rel="canonical" href="{{ URL::current() }}" />
 
-        @if($setting && $setting['favicon'])
+        @if($setting)
+        <meta property="og:site_name" content="{{ $setting['name_site'] }}" />
             <link rel="icon" href="{{ url('storage/' . $setting['favicon']) }}" />
         @endif
-
-
 
         <link rel="stylesheet" href="{{ URL::asset('/css/site/app.css') }}">
 
