@@ -8,7 +8,7 @@
 
         <meta property="og:locale" content="pt_BR">
 
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="website">
 
         @if($seo)
 
@@ -62,13 +62,15 @@
 
             <input class="menu-btn" type="checkbox" id="menu-btn" />
             <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-            <ul class="menu">
-                <li><a href="{{ url('/') }}">Página inicial</a></li>
-                <li><a href="{{ url('/produtos') }}">Produtos</a></li>
-                <li><a href="{{ url('/quem-somos') }}">Quem Somos</a></li>
-                <li><a href="{{ url('/equipe') }}">Equipe</a></li>
-                <li><a href="{{ url('/contato') }}">Contato</a></li>
-            </ul>
+            <nav>
+                <ul class="menu">
+                    <li><a href="{{ url('/') }}">Página inicial</a></li>
+                    <li><a href="{{ url('/produtos') }}">Produtos</a></li>
+                    <li><a href="{{ url('/quem-somos') }}">Quem Somos</a></li>
+                    <li><a href="{{ url('/equipe') }}">Equipe</a></li>
+                    <li><a href="{{ url('/contato') }}">Contato</a></li>
+                </ul>
+            </nav>
         </header>
 
         <div class="container">
@@ -79,7 +81,7 @@
 
         <footer class="footer">
             @if($setting && $setting['copyright'])
-                {{ $setting['copyright'] }}
+                <p>{{ $setting['copyright'] }}</p>
             @endif
         </footer>
 

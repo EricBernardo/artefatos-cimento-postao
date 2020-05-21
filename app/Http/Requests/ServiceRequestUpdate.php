@@ -24,17 +24,10 @@ class ServiceRequestUpdate extends FormRequest
     public function rules()
     {
         return [
-            'name_site' => 'required',
-            'logo' => 'image',
-            'favicon' => 'image',
-            'whatsapp' => 'required',
-            'phone_1' => 'required',
-            'phone_2' => 'required',
-            'phone_3' => 'required',
-            'address' => 'required',
-            'google_maps' => 'required',
-            'copyright' => 'required',
+            'title' => 'required',
+            'description' => 'required',
             'order' => 'required',
+            'image' => 'image',
             'status' => 'required'
         ];
     }

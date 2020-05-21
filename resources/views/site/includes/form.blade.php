@@ -18,13 +18,13 @@
                 <b>Ou melhor, venha nos visitar.</b>
                 <p>Nossos clientes são importantes para nós. Ficaríamos contentes em receber a sua visita durante nosso horário comercial.</p>
                 @if($setting)
-                    <a class="whatsapp" href="https://wa.me/55{{ onlyNumber($setting['whatsapp']) }}" target="_blank">Envie uma mensagem</a>
+                    <a class="whatsapp" href="https://wa.me/+55{{ onlyNumber($setting['whatsapp']) }}" target="_blank">Envie uma mensagem</a>
                     <b>{{ $setting['name_site'] }}</b>
                     <p>{!! nl2br($setting['address']) !!}</p>
                     <p class="phone">
-                        <a href="tel:{{ onlyNumber($setting['phone_1']) }}" target="_blank">{{ $setting['phone_1'] }}</a> |
-                        <a href="tel:{{ onlyNumber($setting['phone_2']) }}" target="_blank">{{ $setting['phone_2'] }}</a> |
-                        <a href="tel:{{ onlyNumber($setting['phone_3']) }}" target="_blank">{{ $setting['phone_3'] }}</a>
+                        <a href="tel:+55{{ onlyNumber($setting['phone_1']) }}" target="_blank">{{ $setting['phone_1'] }}</a> |
+                        <a href="tel:+55{{ onlyNumber($setting['phone_2']) }}" target="_blank">{{ $setting['phone_2'] }}</a> |
+                        <a href="tel:+55{{ onlyNumber($setting['phone_3']) }}" target="_blank">{{ $setting['phone_3'] }}</a>
                     </p>
                     <p>
                         <a href="mailto:{{ $setting['email'] }}" target="_blank">{{ $setting['email']}}</a>

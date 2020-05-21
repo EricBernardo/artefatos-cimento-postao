@@ -9,7 +9,7 @@
                     </div>
                     <div class="block_item__info">
                         <h2 class="block_item__title">{{ $item['title'] }}</h2>
-                        <h3 class="block_item__description">{!! nl2br($item['description']) !!}</h3>
+                        <p class="block_item__description">{!! nl2br($item['description']) !!}</p>
                     </div>
                 </div>
             @endforeach

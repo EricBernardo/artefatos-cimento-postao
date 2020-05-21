@@ -15,7 +15,7 @@
                     </div>
                     <div class="team_item__info">
                         <h2 class="team_item__title">{{ $item['name'] }}</h2>
-                        <h3 class="team_item__description">{{ $item['role'] }}</h3>
+                        <p class="team_item__description">{{ $item['role'] }}</p>
                     </div>
                 </div>
             @endforeach

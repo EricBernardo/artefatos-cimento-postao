@@ -12,7 +12,7 @@
                     <img src="{{url('storage/' . $contact['image'])}}" alt="{{ $contact['title'] }}" />
                 </div>
                 <div class="contact__desctiption">
-                    <p>{{ $contact['title'] }}</p>
+                    <h1>{{ $contact['title'] }}</h1>
                     <p>{{ $contact['subtitle'] }}</p>
                     <br/>
                     <p>{!! nl2br($contact['description']) !!}</p>
