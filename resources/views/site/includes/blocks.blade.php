@@ -1,6 +1,11 @@
 <section>
     <div class="blocks">
+        @if(Request::is('/'))
+            <h2 class="blocks__title">{{ $title }}</h2>
+        @else
         <h1 class="blocks__title">{{ $title }}</h1>
+        @endif
+
         <div class="blocks__items">
             @foreach ($results as $item)
                 <div class="block_item">

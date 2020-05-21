@@ -14,6 +14,8 @@
     }
 
     @media (max-width: 768px) {
+        margin-bottom: -40px;
+
         &__items {
             flex-direction: column;
         }
