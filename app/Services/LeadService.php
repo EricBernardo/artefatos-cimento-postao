@@ -1,9 +1,8 @@
 <?php
 namespace App\Services;
 
-use App\Mail\sendMail;
+use App\Jobs\ProcessSendMail;
 use App\Models\Lead;
-use Illuminate\Support\Facades\Mail;
 
 class LeadService extends DefaultService
 {
@@ -21,8 +20,9 @@ class LeadService extends DefaultService
             'message' => $request->get('message'),
             'http_referrer' => $request->get('http_referrer')
         ])) {
-            Mail::to(env('MAIL_TO'))
-            ->send(new sendMail());
+
+            ProcessSendMail::dispatch($request->all());
+
             return ['status' => 'success'];
         }
 

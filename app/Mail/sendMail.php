@@ -10,14 +10,16 @@ class sendMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    protected $data;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($data)
     {
-        //
+        $this->data = $data;
     }
 
     /**
@@ -30,10 +32,10 @@ class sendMail extends Mailable
         return $this->view('emails.lead')
         ->subject('Contato Site')
         ->with([
-            'name' => request()->get('name'),
-            'email' => request()->get('email'),
-            'phone' => request()->get('phone'),
-            'messages' => request()->get('message')
+            'name' => $this->data['name'],
+            'email' => $this->data['email'],
+            'phone' => $this->data['phone'],
+            'messages' => $this->data['message']
         ]);
     }
 }
