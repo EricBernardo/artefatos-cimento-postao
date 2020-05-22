@@ -11,6 +11,7 @@ if (!isset($_SESSION['last_url']) || !$_SESSION['last_url']) {
 use Carbon\Carbon;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 
@@ -24,6 +25,44 @@ use Illuminate\Support\Facades\URL;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/public', function () {
+    return Redirect::to('/', 301);
+});
+
+Route::get('/public/site', function () {
+    switch (request()->get('page_id')) {
+        case '21':
+        case '18':
+        case '46':
+            return Redirect::to('/produtos', 301);
+            break;
+        case '16':
+        case '61':
+            return Redirect::to('/contato', 301);
+            break;
+        default:
+            return Redirect::to('/', 301);
+            break;
+    }
+});
+
+Route::get('/site', function () {
+    switch (request()->get('page_id')) {
+        case '21':
+        case '18':
+        case '46':
+            return Redirect::to('/produtos', 301);
+            break;
+        case '16':
+        case '61':
+            return Redirect::to('/contato', 301);
+            break;
+        default:
+            return Redirect::to('/', 301);
+            break;
+    }
+});
 
 Route::get('/', 'HomeController@index')->name('home.index');
 Route::get('/produtos', 'ProductController@index')->name('products.index');
