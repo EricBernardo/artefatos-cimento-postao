@@ -11,7 +11,7 @@
             <div class="abouts__items">
                 <div class="about_item">
                     <div class="about_item__image">
-                        <img src="{{ url('storage/' . $about['image']) }}" alt="Quem somos" />
+                        <img src="{{ url('storage/' . $about['image']) }}" alt="Quem somos" title="Quem somos" />
                     </div>
                     <div class="about_item__info">
                         <h2 class="about_item__description">{!! nl2br($about['description']) !!}</h2>

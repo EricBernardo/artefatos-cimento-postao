@@ -56,7 +56,7 @@
         <header class="header">
             @if($setting && $setting['logo'])
                 <a href="/" class="logo">
-                    <img src="{{ url('storage/' . $setting['logo'])}}" alt="{{ $setting['name_site'] }}" />
+                    <img src="{{ url('storage/' . $setting['logo'])}}" alt="{{ $setting['name_site'] }}" title="{{ $setting['name_site'] }}" />
                 </a>
             @endif
 
