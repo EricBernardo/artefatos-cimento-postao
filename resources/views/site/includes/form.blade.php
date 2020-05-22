@@ -1,5 +1,5 @@
 <section>
-    <div class="form">
+    <div class="form {{ $class }}">
         <h2 class="form__title">Entre em contato</h2>
         <div class="form__items">
             <div class="form__form">

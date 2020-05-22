@@ -10,6 +10,6 @@
 
     @include('site/includes/blocks', ['title' => 'Nossos serviços', 'results' => $services])
 
-    @include('site/includes/form')
+    @include('site/includes/form', ['class' => 'form-home'])
 
 @stop

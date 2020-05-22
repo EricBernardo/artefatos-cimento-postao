@@ -4,6 +4,7 @@
 
 body {
     margin-top: 90px;
+    background-color: #f6f6f6;
 }
 
 form input,
@@ -24,6 +25,10 @@ form button {
     color: #fff;
     font-size: 18px;
     text-transform: uppercase;
+
+    &[disabled] {
+        opacity: 0.7;
+    }
 }
 
 section {
