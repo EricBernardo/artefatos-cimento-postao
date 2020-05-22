@@ -5,7 +5,7 @@
             <div class="form__form">
                 <p>Ligue para nós</p>
             <form id="form-contact" action="{{ url('/lead') }}">
-                    {{ csrf_field() }}
+                    {{-- {{ csrf_field() }} --}}
                     <input type="hidden" name="http_referrer" value="{{ @$_SESSION['last_url'] }} " />
                     <input type="text" name="name" placeholder="Nome*" />
                     <input type="text" name="email" placeholder="E-mail*" />
