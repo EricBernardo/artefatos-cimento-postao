@@ -20,7 +20,7 @@
 
             <meta property="og:description" content="{{ $seo['description'] }}" />
 
-            <meta property="og:image" content="{{ url("storage/" . $seo['image']) }}" />
+            <meta property="og:image" content="{{ URL::asset("storage/" . $seo['image']) }}" />
 
             <title>{{ $seo['title'] }}</title>
 
@@ -32,7 +32,7 @@
 
         @if($setting)
         <meta property="og:site_name" content="{{ $setting['name_site'] }}" />
-            <link rel="icon" href="{{ url('storage/' . $setting['favicon']) }}" />
+            <link rel="icon" href="{{ URL::asset('storage/' . $setting['favicon']) }}" />
         @endif
 
         <link rel="stylesheet" href="{{ URL::asset('/css/site/app.css?v=') . env('APP_VERSION') }}">
@@ -56,7 +56,7 @@
         <header class="header">
             @if($setting && $setting['logo'])
                 <a href="/" class="logo">
-                    <img src="{{ url('storage/' . $setting['logo'])}}" alt="{{ $setting['name_site'] }}" title="{{ $setting['name_site'] }}" />
+                    <img src="{{ URL::asset::asset('storage/' . $setting['logo'])}}" alt="{{ $setting['name_site'] }}" title="{{ $setting['name_site'] }}" />
                 </a>
             @endif
 

@@ -31,7 +31,7 @@
                     </p>
                     <p>
                         <a class="facebook-link" href="{{ $setting['facebook_link'] }}" target="_blank">
-                            <img src="{{ url('images/facebook-icon.png')}}" alt="Visite nossa página no Facebook" title="Visite nossa página no Facebook" />
+                            <img src="{{ URL::asset('images/facebook-icon.png')}}" alt="Visite nossa página no Facebook" title="Visite nossa página no Facebook" />
                         </a>
                     </p>
                 @endif
