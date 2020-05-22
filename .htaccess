@@ -7,8 +7,8 @@
     RewriteEngine On
 
     # Force to SSL
-    #RewriteCond %{HTTPS} !=on
-    #RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
     # Force to WWW
     RewriteCond %{HTTP_HOST} !^www\.(.*)$ [NC]
