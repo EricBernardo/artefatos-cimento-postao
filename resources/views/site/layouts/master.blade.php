@@ -10,6 +10,8 @@
 
         <meta property="og:type" content="website">
 
+        <meta name="google-site-verification" content="g-6BiY4w-I_Eg9AApeNLFOqyeRJb-C7_PNziwQMB2LI">
+
         @if($seo)
 
             <meta name="description" content="{{ $seo['description'] }}">
