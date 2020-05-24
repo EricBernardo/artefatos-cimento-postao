@@ -30,7 +30,7 @@ Route::get('/public', function () {
     return Redirect::to('/', 301);
 });
 
-Route::get('/public/{site?}', function () {
+Route::get('/public/site', function () {
     switch (request()->get('page_id')) {
         case '21':
         case '18':
