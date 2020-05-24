@@ -42,7 +42,7 @@ Route::get('/public/site', function () {
             return Redirect::to('/contato', 301);
             break;
         default:
-            return Redirect::to('/', 301);
+            return Redirect::to('https://www.artefatosdecimentoportao.com.br', 301);
             break;
     }
 });
@@ -56,7 +56,7 @@ Route::get('/site', function () {
             break;
         case '16':
         case '61':
-            return Redirect::to('/contato', 301);
+            return Redirect::to('https://www.artefatosdecimentoportao.com.br/produtos', 301);
             break;
         default:
             return Redirect::to('/', 301);
