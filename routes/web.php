@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\URL;
 |
 */
 
-switch (request()->getBaseUrl()) {
+switch (request()->getRequestUri()) {
     case '/public/site?page_id=46':
     case '/public/site?page_id=18':
     case '/public/site?page_id=21':
@@ -54,7 +54,7 @@ switch (request()->getBaseUrl()) {
     case '/public/site/?page_id=61':
     case '/site/?page_id=16':
     case '/site/?page_id=61':
-        header('Location: http://artefatosdecimentoportao.com.br/produtos', true, 301);
+        header('Location: http://artefatosdecimentoportao.com.br/contato', true, 301);
         die;
         break;
     case '/public':
