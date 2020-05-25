@@ -65,6 +65,16 @@ switch (request()->getRequestUri()) {
         break;
 }
 
+switch (request()->getBaseUrl()) {
+    case '/public':
+    case '/public/':
+    case '/site':
+    case '/site/':
+        header('Location: http://artefatosdecimentoportao.com.br/', true, 301);
+        die;
+        break;
+}
+
 Route::get('/', 'HomeController@index')->name('home.index');
 Route::get('/produtos', 'ProductController@index')->name('products.index');
 Route::get('/quem-somos', 'AboutController@index')->name('abouts.index');
