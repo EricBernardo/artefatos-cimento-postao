@@ -10,7 +10,8 @@ return [
     'contacts' => 'Contatos',
     'settings' => 'Configurações',
     'seo' => 'SEO',
-    'register_user' => 'Registrar usuário'
+    'register_user' => 'Registrar usuário',
+    'leads' => 'Leads'
     // 'main_navigation'               => 'Navegação Principal',
     // 'blog'                          => 'Blog',
     // 'pages'                         => 'Página',

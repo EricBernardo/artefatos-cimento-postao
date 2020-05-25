@@ -9,6 +9,7 @@ class DefaultService
     public function first() {
         return $this->model->where('status', 1)->orderBy('order')->first();
     }
+
     public function all() {
         return $this->model->where('status', 1)->orderBy('order')->get();
     }

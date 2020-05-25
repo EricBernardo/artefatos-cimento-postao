@@ -249,6 +249,11 @@ return [
             'icon'        => 'far fa-fw fa-circle'
         ],
         [
+            'text'        => 'leads',
+            'url'         => 'admin/leads',
+            'icon'        => 'far fa-fw fa-circle'
+        ],
+        [
             'text'        => 'settings',
             'url'         => 'admin/settings',
             'icon'        => 'far fa-fw fa-circle'
@@ -263,6 +268,7 @@ return [
             'url'         => 'register',
             'icon'        => 'far fa-fw fa-circle'
         ]
+
     ],
 
     /*

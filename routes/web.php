@@ -172,3 +172,5 @@ Route::post('admin/home_products/store', 'Auth\HomeProductController@store')->na
 Route::get('admin/home_products/show/{id}', 'Auth\HomeProductController@show')->name('home_products.show');
 Route::put('admin/home_products/update/{id}', 'Auth\HomeProductController@update')->name('home_products.update');
 Route::delete('admin/home_products/delete/{id}', 'Auth\HomeProductController@delete')->name('home_products.delete');
+
+Route::get('admin/leads', 'Auth\LeadController@index')->name('leads.index');

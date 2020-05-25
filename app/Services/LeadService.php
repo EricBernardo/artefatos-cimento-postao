@@ -11,6 +11,10 @@ class LeadService extends DefaultService
         $this->model = $model;
     }
 
+    public function paginate() {
+        return $this->model->orderBy('id', 'desc')->paginate();
+    }
+
     public function store($request) {
 
         if($this->model->insert([
@@ -18,7 +22,8 @@ class LeadService extends DefaultService
             'email' => $request->get('email'),
             'phone' => $request->get('phone'),
             'message' => $request->get('message'),
-            'http_referrer' => $request->get('http_referrer')
+            'http_referrer' => $request->get('http_referrer'),
+            'created_at' => date('Y-m-d H:i:s')
         ])) {
 
             ProcessSendMail::dispatch($request->all());

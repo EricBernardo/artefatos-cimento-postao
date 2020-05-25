@@ -53,6 +53,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    @include('admin/includes/pagination')
                 </div>
             </div>
         </div>
