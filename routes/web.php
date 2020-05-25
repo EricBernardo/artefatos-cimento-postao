@@ -26,8 +26,8 @@ use Illuminate\Support\Facades\URL;
 |
 */
 
-switch (request()->getRequestUri()) {
-    case '/public/':        
+switch (request()->getBaseUrl()) {
+    case '/public':
         header('Location: http://artefatosdecimentoportao.com.br/', true, 301);
         die;
     break;
