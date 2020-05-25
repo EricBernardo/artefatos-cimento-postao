@@ -27,68 +27,43 @@ use Illuminate\Support\Facades\URL;
 */
 
 switch (request()->getBaseUrl()) {
+    case '/public/site?page_id=46':
+    case '/public/site?page_id=18':
+    case '/public/site?page_id=21':
+    case '/public/site?page_id=37':
+    case '/site?page_id=46':
+    case '/site?page_id=18':
+    case '/site?page_id=21':
+    case '/site?page_id=37':
+    case '/public/site/?page_id=46':
+    case '/public/site/?page_id=18':
+    case '/public/site/?page_id=21':
+    case '/public/site/?page_id=37':
+    case '/site/?page_id=46':
+    case '/site/?page_id=18':
+    case '/site/?page_id=21':
+    case '/site/?page_id=37':
+        header('Location: http://artefatosdecimentoportao.com.br/produtos', true, 301);
+        die;
+        break;
+    case '/public/site?page_id=16':
+    case '/public/site?page_id=61':
+    case '/site?page_id=16':
+    case '/site?page_id=61':
+    case '/public/site/?page_id=16':
+    case '/public/site/?page_id=61':
+    case '/site/?page_id=16':
+    case '/site/?page_id=61':
+        header('Location: http://artefatosdecimentoportao.com.br/produtos', true, 301);
+        die;
+        break;
     case '/public':
+    case '/site':
+    case '/site/':
         header('Location: http://artefatosdecimentoportao.com.br/', true, 301);
         die;
-    break;
+        break;
 }
-
-Route::get('/public', function () {    
-    return Redirect::to('/', 301);
-});
-
-Route::get('/public/{p?}', function ($p) {    
-    switch (request()->get('page_id')) {
-        case '21':
-        case '18':
-        case '46':
-            return Redirect::to('/produtos', 301);
-            break;
-        case '16':
-        case '61':
-            return Redirect::to('/contato', 301);
-            break;
-        default:
-            return Redirect::to('/', 301);
-            break;
-    }
-
-    switch ($p) {
-        case 'produtos':
-            return Redirect::to('/produtos', 301);
-        break;
-        case 'contato':
-            return Redirect::to('/contato', 301);
-        break;
-        case 'quem-somos':
-            return Redirect::to('/quem-somos', 301);
-        break;
-        case 'equipe':
-            return Redirect::to('/equipe', 301);
-        break;
-        default:
-            return Redirect::to('/', 301);
-            break;
-    }
-
-});
-
-Route::get('/site', function () {
-    switch (request()->get('page_id')) {
-        case '21':
-        case '18':
-        case '46':
-            return Redirect::to('/produtos', 301);
-            break;
-        case '16':
-        case '61':
-            return Redirect::to('https://www.artefatosdecimentoportao.com.br/produtos', 301);
-            break;
-        default:
-            return Redirect::to('/', 301);
-            break;
-    }
-});
 
 Route::get('/', 'HomeController@index')->name('home.index');
 Route::get('/produtos', 'ProductController@index')->name('products.index');
