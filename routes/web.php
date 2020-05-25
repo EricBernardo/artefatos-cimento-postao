@@ -26,11 +26,18 @@ use Illuminate\Support\Facades\URL;
 |
 */
 
-Route::get('/public', function () {
+switch (request()->getRequestUri()) {
+    case '/public/':        
+        header('Location: http://artefatosdecimentoportao.com.br/', true, 301);
+        die;
+    break;
+}
+
+Route::get('/public', function () {    
     return Redirect::to('/', 301);
 });
 
-Route::get('/public/site', function () {
+Route::get('/public/{p?}', function ($p) {    
     switch (request()->get('page_id')) {
         case '21':
         case '18':
@@ -42,9 +49,28 @@ Route::get('/public/site', function () {
             return Redirect::to('/contato', 301);
             break;
         default:
-            return Redirect::to('https://www.artefatosdecimentoportao.com.br', 301);
+            return Redirect::to('/', 301);
             break;
     }
+
+    switch ($p) {
+        case 'produtos':
+            return Redirect::to('/produtos', 301);
+        break;
+        case 'contato':
+            return Redirect::to('/contato', 301);
+        break;
+        case 'quem-somos':
+            return Redirect::to('/quem-somos', 301);
+        break;
+        case 'equipe':
+            return Redirect::to('/equipe', 301);
+        break;
+        default:
+            return Redirect::to('/', 301);
+            break;
+    }
+
 });
 
 Route::get('/site', function () {
