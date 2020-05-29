@@ -1,8 +1,15 @@
 function setIframeSrc() {
-    const iframe_google_map = document.getElementById('iframe-google-map');
-    if (iframe_google_map) {
-        iframe_google_map.src = iframe_google_map.attributes['data-src'].value;
+    const map = document.getElementById("map");
+    if (map) {
+        var ifrm = document.createElement("iframe");
+        ifrm.setAttribute("src", map.attributes["data-src"].value);
+        ifrm.setAttribute("frameborder", "0");
+        ifrm.setAttribute("aria-hidden", "false");
+        ifrm.setAttribute("tabindex", "0");
+        map.appendChild(ifrm);
     }
 }
 
-setTimeout(setIframeSrc, 1000);
+window.onload = function() {
+    setTimeout(setIframeSrc, 1000);
+};
