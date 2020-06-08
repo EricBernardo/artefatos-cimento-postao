@@ -26,7 +26,7 @@
                                 <th width="20%">Título</th>
                                 <th width="20%">Imagem</th>
                                 <th width="20%">Ordem</th>
-                                <th width="10%">Status</th>
+                                <th width="20%">Status</th>
                                 <th width="10%">-</th>
                                 <th width="10%">-</th>
                             </tr>
