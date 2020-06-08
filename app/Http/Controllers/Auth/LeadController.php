@@ -21,4 +21,10 @@ class LeadController extends Controller
         $items = $this->service->paginate();
         return view('admin/pages/lead/index', compact('items'));
     }
+
+    public function show($id)
+    {
+        $item = $this->service->find($id);
+        return view('admin/pages/lead/show', compact('item'));
+    }
 }

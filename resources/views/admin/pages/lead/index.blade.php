@@ -11,26 +11,29 @@
                 </div>
                 <div class="card-body">
                     @include('admin/includes/alerts')
-                    <table class="table table-bordered">
+                    <table class="table table-bordered table-responsive">
                         <thead>
                             <tr>
-                                <th>Data</th>
-                                <th>Nome</th>
-                                <th>E-mail</th>
-                                <th>Telefone</th>
-                                <th>Mensagem</th>
-                                <th>Última URL</th>
+                                <th width="20%">#</th>
+                                <th width="20%">Data</th>
+                                <th width="20%">Nome</th>
+                                <th width="20%">E-mail</th>
+                                <th width="10%">Telefone</th>
+                                <th width="5%">-</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($items as $item)
                                 <tr>
+                                    <td>{{ $item['id'] }}</td>
                                     <td>{{ $item['created_at'] ? date('d/m/Y H:i', strtotime($item['created_at'])) : '-' }}</td>
                                     <td>{{ $item['name'] }}</td>
                                     <td>{{ $item['email'] }}</td>
                                     <td>{{ $item['phone'] }}</td>
-                                    <td>{{ $item['message'] }}</td>
-                                    <td>{{ $item['http_referrer'] }}</td>
+                                    <td>
+                                        <a href="{{ route('leads.show', ['id' => $item['id']]) }}"
+                                            class="btn btn-sm btn-info">Visualizar</a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

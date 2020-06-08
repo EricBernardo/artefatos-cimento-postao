@@ -19,16 +19,16 @@
                 </div>
                 <div class="card-body">
                     @include('admin/includes/alerts')
-                    <table class="table table-bordered">
+                    <table class="table table-bordered table-responsive">
                         <thead>
                             <tr>
-                                <th style="width: 10px">#</th>
-                                <th>Nome do site</th>
-                                <th>Logo</th>
-                                <th>Ordem</th>
-                                <th>Status</th>
-                                <th>-</th>
-                                <th>-</th>
+                                <th width="10%">#</th>
+                                <th width="20%">Nome do site</th>
+                                <th width="20%">Logo</th>
+                                <th width="20%">Ordem</th>
+                                <th width="20%">Status</th>
+                                <th width="10%">-</th>
+                                <th width="10%">-</th>
                             </tr>
                         </thead>
                         <tbody>

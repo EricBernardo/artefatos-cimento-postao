@@ -174,3 +174,4 @@ Route::put('admin/home_products/update/{id}', 'Auth\HomeProductController@update
 Route::delete('admin/home_products/delete/{id}', 'Auth\HomeProductController@delete')->name('home_products.delete');
 
 Route::get('admin/leads', 'Auth\LeadController@index')->name('leads.index');
+Route::get('admin/leads/{id}', 'Auth\LeadController@show')->name('leads.show');
