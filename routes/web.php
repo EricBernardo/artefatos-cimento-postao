@@ -26,55 +26,6 @@ use Illuminate\Support\Facades\URL;
 |
 */
 
-switch (request()->getRequestUri()) {
-    case '/public/site?page_id=46':
-    case '/public/site?page_id=18':
-    case '/public/site?page_id=21':
-    case '/public/site?page_id=37':
-    case '/site?page_id=46':
-    case '/site?page_id=18':
-    case '/site?page_id=21':
-    case '/site?page_id=37':
-    case '/public/site/?page_id=46':
-    case '/public/site/?page_id=18':
-    case '/public/site/?page_id=21':
-    case '/public/site/?page_id=37':
-    case '/site/?page_id=46':
-    case '/site/?page_id=18':
-    case '/site/?page_id=21':
-    case '/site/?page_id=37':
-        header('Location: http://artefatosdecimentoportao.com.br/produtos', true, 301);
-        die;
-        break;
-    case '/public/site?page_id=16':
-    case '/public/site?page_id=61':
-    case '/site?page_id=16':
-    case '/site?page_id=61':
-    case '/public/site/?page_id=16':
-    case '/public/site/?page_id=61':
-    case '/site/?page_id=16':
-    case '/site/?page_id=61':
-        header('Location: http://artefatosdecimentoportao.com.br/contato', true, 301);
-        die;
-        break;
-    case '/public':
-    case '/site':
-    case '/site/':
-        header('Location: http://artefatosdecimentoportao.com.br/', true, 301);
-        die;
-        break;
-}
-
-switch (request()->getBaseUrl()) {
-    case '/public':
-    case '/public/':
-    case '/site':
-    case '/site/':
-        header('Location: http://artefatosdecimentoportao.com.br/', true, 301);
-        die;
-        break;
-}
-
 Route::get('/', 'HomeController@index')->name('home.index');
 Route::get('/produtos', 'ProductController@index')->name('products.index');
 Route::get('/quem-somos', 'AboutController@index')->name('abouts.index');
