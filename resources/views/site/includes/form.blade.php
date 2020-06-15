@@ -16,7 +16,7 @@
             </div>
             <div class="form__desctiption">
                 <b>Ou melhor, venha nos visitar.</b>
-                <p>Nossos clientes são importantes para nós. Ficaríamos contentes em receber a sua visita durante nosso horário comercial.</p>
+                <p>Nossos clientes são importantes para nós. Ficaremos contentes em receber sua visita!</p>
                 @if($setting)
                     <a class="whatsapp" href="//api.whatsapp.com/send?phone=55{{ onlyNumber($setting['whatsapp']) }}&text=&source=&data=&app_absent=" target="_blank">Envie uma mensagem</a>
                     <b>{{ $setting['name_site'] }}</b>
