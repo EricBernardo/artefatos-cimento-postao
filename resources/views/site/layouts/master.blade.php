@@ -74,11 +74,12 @@
 
             <div class="keywords owl-carousel">
                 <?php
-                $arr_keywords = explode(',', $seo['keywords']);
-                shuffle($arr_keywords);
-                foreach ($arr_keywords as $key => $value) {
-                    echo '<p>' . trim($value) . '</p>';
-                } ?>
+                    $arr_keywords = explode(',', $seo['keywords']);
+                    shuffle($arr_keywords);
+                    foreach ($arr_keywords as $key => $value) {
+                        echo '<p>' . trim($value) . '</p>';
+                    } 
+                ?>
             </div>
 
         <?php endif; ?>
