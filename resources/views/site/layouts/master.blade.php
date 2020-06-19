@@ -90,7 +90,7 @@
             @endif
         </footer>
 
-        <script src="{{ URL::asset('/js/site/app.js?v=') . env('APP_VERSION') }}"></script>
+        <script async src="{{ URL::asset('/js/site/app.js?v=') . env('APP_VERSION') }}"></script>
 
          <!-- Google Tag Manager -->
         <script async>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
