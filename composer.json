@@ -18,8 +18,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
         "laravelium/sitemap": "^7.0",
-        "lucascudo/laravel-pt-br-localization": "^1.1",
-        "renatomarinho/laravel-page-speed": "^1.8"
+        "lucascudo/laravel-pt-br-localization": "^1.1"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
