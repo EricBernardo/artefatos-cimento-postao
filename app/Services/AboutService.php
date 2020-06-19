@@ -75,7 +75,7 @@ class AboutService extends DefaultService
             File::delete('storage/' . $image);
         }
 
-        if ($image_mobile = $entity['image_mob$image_mobile']) {
+        if ($image_mobile = $entity['image_mobile']) {
             File::delete('storage/' . $image_mobile);
         }
 
