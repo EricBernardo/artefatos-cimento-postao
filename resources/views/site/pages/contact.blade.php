@@ -11,7 +11,7 @@
         <div class="contact__items">
             @if($contact)
                 <div class="contact__image">
-                    <img src="{{ URL::asset('storage/' . $contact['image']) }}" alt="{{ $contact['title'] }}" title="{{ $contact['title'] }}" />
+                    <img src="{{ URL::asset('storage/' . (isMobile() && $contact['image_mobile'] ? $contact['image_mobile'] : $contact['image'])) }}" alt="{{ $contact['title'] }}" title="{{ $contact['title'] }}" />
                 </div>
                 <div class="contact__desctiption">
                     <h1>{{ $contact['title'] }}</h1>

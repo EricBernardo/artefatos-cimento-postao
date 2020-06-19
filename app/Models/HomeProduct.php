@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class HomeProduct extends Model
 {
     protected $fillable = [
-        'title', 'url', 'image', 'order', 'status',
+        'title', 'url', 'image', 'image_mobile', 'order', 'status',
     ];
 }

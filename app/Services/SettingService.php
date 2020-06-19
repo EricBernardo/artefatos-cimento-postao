@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Services;
 
 use App\Models\Setting;
@@ -11,7 +12,8 @@ class SettingService extends DefaultService
         $this->model = $model;
     }
 
-    public function store($request) {
+    public function store($request)
+    {
 
         $logo = $this->uploadFile($request, 'settings', 'logo');
         $favicon = $this->uploadFile($request, 'settings', 'favicon');
@@ -21,6 +23,8 @@ class SettingService extends DefaultService
             'logo' => $logo,
             'favicon' => $favicon,
             'whatsapp' => $request->get('whatsapp'),
+            'whatsapp_ads' => $request->get('whatsapp_ads'),
+            'phone_ads' => $request->get('phone_ads'),
             'phone_1' => $request->get('phone_1'),
             'phone_2' => $request->get('phone_2'),
             'phone_3' => $request->get('phone_3'),
@@ -34,18 +38,20 @@ class SettingService extends DefaultService
         ]);
 
         return redirect()
-        ->route('settings.create')
-        ->with('message', 'Cadastrado com sucesso!');
-
+            ->route('settings.create')
+            ->with('message', 'Cadastrado com sucesso!');
     }
 
-    public function update($request, $id) {
+    public function update($request, $id)
+    {
 
         $entity = $this->model->find($id);
 
         $data = [
             'name_site' => $request->get('name_site'),
             'whatsapp' => $request->get('whatsapp'),
+            'whatsapp_ads' => $request->get('whatsapp_ads'),
+            'phone_ads' => $request->get('phone_ads'),
             'phone_1' => $request->get('phone_1'),
             'phone_2' => $request->get('phone_2'),
             'phone_3' => $request->get('phone_3'),
@@ -58,15 +64,15 @@ class SettingService extends DefaultService
             'status' => $request->get('status') == '1' ? true : false
         ];
 
-        if($request->hasFile('favicon')) {
-            if($favicon = $entity['favicon']) {
+        if ($request->hasFile('favicon')) {
+            if ($favicon = $entity['favicon']) {
                 File::delete('storage/' . $favicon);
             }
             $data['favicon'] = $this->uploadFile($request, 'settings', 'favicon');
         }
 
-        if($request->hasFile('logo')) {
-            if($logo = $entity['logo']) {
+        if ($request->hasFile('logo')) {
+            if ($logo = $entity['logo']) {
                 File::delete('storage/' . $logo);
             }
             $data['logo'] = $this->uploadFile($request, 'settings', 'logo');
@@ -75,29 +81,27 @@ class SettingService extends DefaultService
         $entity->update($data);
 
         return redirect()
-        ->route('settings.show', ['id' => $id])
-        ->with('message', 'Atualizado com sucesso!');
-
+            ->route('settings.show', ['id' => $id])
+            ->with('message', 'Atualizado com sucesso!');
     }
 
-    public function delete($id) {
+    public function delete($id)
+    {
 
         $entity = $this->model->find($id);
 
-        if($logo = $entity['logo']) {
+        if ($logo = $entity['logo']) {
             File::delete('storage/' . $logo);
         }
 
-        if($favicon = $entity['favicon']) {
+        if ($favicon = $entity['favicon']) {
             File::delete('storage/' . $favicon);
         }
 
         $entity->delete();
 
         return redirect()
-        ->route('settings.index')
-        ->with('message', 'Registro excluido com sucesso!');
-
+            ->route('settings.index')
+            ->with('message', 'Registro excluido com sucesso!');
     }
-
 }

@@ -49,6 +49,10 @@
                             <input type="text" name="whatsapp" class="form-control" id="inputWhatsapp" placeholder="Whatsapp" value="{{ $item['whatsapp'] }}">
                         </div>
                         <div class="form-group">
+                            <label for="inputWhatsappAds">Whatsapp Ads</label>
+                            <input type="text" name="whatsapp_ads" class="form-control" id="inputWhatsappAds" placeholder="Whatsapp Ads" value="{{ $item['whatsapp_ads'] }}">
+                        </div>
+                        <div class="form-group">
                             <label for="inputPhone1">Telefone</label>
                             <input type="text" name="phone_1" class="form-control" id="inputPhone1" placeholder="Telefone" value="{{ $item['phone_1'] }}">
                         </div>
@@ -59,6 +63,10 @@
                         <div class="form-group">
                             <label for="inputPhone3">Telefone 3</label>
                             <input type="text" name="phone_3" class="form-control" id="inputPhone3" placeholder="Telefone 3" value="{{ $item['phone_3'] }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPhoneAds">Telefone Ads</label>
+                            <input type="text" name="phone_ads" class="form-control" id="inputPhoneAds" placeholder="Telefone Ads" value="{{ $item['phone_ads'] }}">
                         </div>
                         <div class="form-group">
                             <label for="inputAddress">Endereço</label>

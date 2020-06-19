@@ -8,6 +8,10 @@ if (!isset($_SESSION['last_url']) || !$_SESSION['last_url']) {
     $_SESSION['last_url'] = @$_SERVER['HTTP_REFERER'];
 }
 
+if (isset($_GET['_source'])) {
+    $_SESSION['_source'] = $_GET['_source'];
+}
+
 use Carbon\Carbon;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;

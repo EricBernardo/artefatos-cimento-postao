@@ -39,11 +39,11 @@
 
         <link rel="stylesheet" href="{{ URL::asset('/css/site/app.css?v=') . env('APP_VERSION') }}">
 
-        
+
 
     </head>
     <body>
-    
+
         <header class="header">
             @if($setting && $setting['logo'])
                 <a href="{{ url('/') }}" class="logo">
@@ -78,7 +78,7 @@
                     shuffle($arr_keywords);
                     foreach ($arr_keywords as $key => $value) {
                         echo '<p>' . trim($value) . '</p>';
-                    } 
+                    }
                 ?>
             </div>
 
@@ -93,11 +93,11 @@
         <script src="{{ URL::asset('/js/site/app.js?v=') . env('APP_VERSION') }}"></script>
 
          <!-- Google Tag Manager -->
-        <script async>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        {{-- <script async>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-TWZ29DW');</script>
+        })(window,document,'script','dataLayer','GTM-TWZ29DW');</script> --}}
         <!-- End Google Tag Manager -->
 
     </body>

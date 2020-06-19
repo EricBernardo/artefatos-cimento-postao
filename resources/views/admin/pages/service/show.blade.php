@@ -22,7 +22,7 @@
                                 value="{{ $item['title'] }}">
                         </div>
                         <div class="form-group">
-                            <label for="inputImagem">Imagem</label>
+                            <label for="inputImage">Imagem</label>
                             <div class="input-group">
                                 <div class="custom-file">
                                     <input type="file" name="image" id="inputImage">
@@ -31,6 +31,19 @@
                             <img height="200px"
                                 src="{{ url("storage/{$item['image']}") }}"
                                 />
+                        </div>
+                        <div class="form-group">
+                            <label for="inputImageMobile">Imagem mobile</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" name="image_mobile" id="inputImageMobile">
+                                </div>
+                            </div>
+                            @if($item['image_mobile'])
+                                <img height="200px"
+                                src="{{ url("storage/{$item['image_mobile']}") }}"
+                                />
+                            @endif
                         </div>
                         <div class="form-group">
                             <label for="inputDescription">Descrição</label>

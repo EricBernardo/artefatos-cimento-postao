@@ -15,10 +15,18 @@
                         enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group">
-                            <label for="inputImagem">Imagem</label>
+                            <label for="inputImage">Imagem</label>
                             <div class="input-group">
                                 <div class="custom-file">
                                     <input type="file" name="image" id="inputImage">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputImageMobile">Imagem mobile</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" name="image_mobile" id="inputImageMobile">
                                 </div>
                             </div>
                         </div>

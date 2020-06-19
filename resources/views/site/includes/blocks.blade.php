@@ -10,7 +10,7 @@
             @foreach ($results as $item)
                 <div class="block_item">
                     <div class="block_item__image">
-                        <img src="{{ URL::asset('storage/' . $item['image'])}}" alt="{{ $item['title'] }}" title="{{ $item['title'] }}" />
+                        <img src="{{ URL::asset('storage/' . (isMobile() && $item['image_mobile'] ? $item['image_mobile'] : $item['image']))}}" alt="{{ $item['title'] }}" title="{{ $item['title'] }}" />
                     </div>
                     <div class="block_item__info">
                         <h2 class="block_item__title">{{ $item['title'] }}</h2>
