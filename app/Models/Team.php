@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Team extends Model
 {
     protected $fillable = [
-        'name', 'role', 'image', 'whatsapp', 'order', 'status',
+        'name', 'role', 'image', 'image_mobile', 'order', 'status',
     ];
 }
