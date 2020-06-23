@@ -31,7 +31,6 @@ use Illuminate\Support\Facades\URL;
 */
 
 Route::get('/', 'HomeController@index')->name('home.index');
-Route::get('/test', 'HomeController@test')->name('home.test');
 Route::get('/produtos', 'ProductController@index')->name('products.index');
 Route::get('/quem-somos', 'AboutController@index')->name('abouts.index');
 Route::get('/equipe', 'TeamController@index')->name('teams.index');
