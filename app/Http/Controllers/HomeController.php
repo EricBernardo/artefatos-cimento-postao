@@ -56,4 +56,20 @@ class HomeController extends Controller
             'home_products'
         ));
     }
+
+    public function test()
+    {
+        $banner = $this->serviceBanner->first();
+        $setting = $this->serviceSetting->first();
+        $services = $this->serviceService->all();
+        $seo = $this->serviceSeo->getSeo();
+        $home_products = $this->serviceHomeProduct->all();
+        return view('site/pages/home2', compact(
+            'setting',
+            'services',
+            'banner',
+            'seo',
+            'home_products'
+        ));
+    }
 }
