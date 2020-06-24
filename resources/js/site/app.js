@@ -5,7 +5,7 @@ require("./lead");
 require("./owl.carousel");
 
 window.onload = function () {
-    setTimeout(function () {
+    setTimeout(() => {
         $(".owl-carousel").owlCarousel({
             loop: false,
             margin: 10,
