@@ -72,7 +72,7 @@
 
         <?php if(isset($seo) && $seo['keywords']) : ?>
 
-            <div class="keywords owl-carousel" id="eric321">
+            <div class="keywords owl-carousel">
                 <?php
                     $arr_keywords = explode(',', $seo['keywords']);
                     shuffle($arr_keywords);
