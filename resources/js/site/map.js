@@ -6,10 +6,11 @@ function setIframeSrc() {
         ifrm.setAttribute("frameborder", "0");
         ifrm.setAttribute("aria-hidden", "false");
         ifrm.setAttribute("tabindex", "0");
+        ifrm.setAttribute("defer", "defer");
         map.appendChild(ifrm);
     }
 }
 
-window.onload = function() {
+window.onload = function () {
     setTimeout(setIframeSrc, 1000);
 };
