@@ -11,6 +11,6 @@ function setIframeSrc() {
     }
 }
 
-window.onload = function () {
+$(document).ready(function () {
     setTimeout(setIframeSrc, 1000);
-};
+});
