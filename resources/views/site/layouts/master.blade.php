@@ -90,11 +90,11 @@
             @endif
         </footer>
 
-        <script async src="{{ URL::asset('/js/site/app.js?v=') . env('APP_VERSION') }}"></script>
+        <script src="{{ URL::asset('/js/site/app.js?v=') . env('APP_VERSION') }}"></script>
 
          <!-- Google Tag Manager -->
 
-        <script async>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        <script rel="preconnect">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
