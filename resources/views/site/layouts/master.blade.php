@@ -72,17 +72,24 @@
 
         <?php if(isset($seo) && $seo['keywords']) : ?>
 
-            <div class="keywords owl-carousel">
-                <?php
-                    $arr_keywords = explode(',', $seo['keywords']);
-                    shuffle($arr_keywords);
-                    foreach ($arr_keywords as $key => $value) {
-                        echo '<p>' . trim($value) . '</p>';
-                    }
-                ?>
+            <div class="carousel js-product-carousel">
+                <div class="carousel__view">
+                    <ul class="product-list js-product-list">
+
+                        <?php
+                            $arr_keywords = explode(',', $seo['keywords']);
+                            shuffle($arr_keywords);
+                            foreach ($arr_keywords as $key => $value) {
+                                echo '<li class="product-list__item"><div data-slide="'.$key.'" class="product"><span>'.$value.'</span></div></li>';
+                            }
+                        ?>
+
+                    </ul>
+                </div>
             </div>
 
-        <?php endif; ?>
+          <?php endif; ?>
+
 
         <footer class="footer">
             @if($setting && $setting['copyright'])
@@ -93,11 +100,11 @@
         <script async src="{{ URL::asset('/js/site/app.js?v=') . env('APP_VERSION') }}"></script>
 
         <!-- Google Tag Manager -->
-        <script async>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        {{-- <script async>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-TWZ29DW');</script>
+        })(window,document,'script','dataLayer','GTM-TWZ29DW');</script> --}}
         <!-- End Google Tag Manager -->
 
     </body>

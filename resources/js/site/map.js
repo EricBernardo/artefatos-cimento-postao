@@ -11,6 +11,4 @@ function setIframeSrc() {
     }
 }
 
-$(document).ready(function () {
-    setTimeout(setIframeSrc, 1000);
-});
+setTimeout(setIframeSrc, 3000);

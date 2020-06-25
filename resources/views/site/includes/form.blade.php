@@ -4,14 +4,14 @@
         <div class="form__items">
             <div class="form__form">
                 <p>Ligue para nós</p>
-            <form id="form-contact" action="{{ url('/lead') }}">
-                    {{-- {{ csrf_field() }} --}}
+                <form id="form-contact" action="{{ url('/lead') }}">
                     <input type="hidden" name="http_referrer" value="{{ @$_SESSION['last_url'] }} " />
                     <input type="text" name="name" placeholder="Nome*" />
                     <input type="text" name="email" placeholder="E-mail*" />
                     <input type="text" name="phone" placeholder="Telefone*" />
                     <textarea name="message" placeholder="Mensagem*" rows="6"></textarea>
-                    <button type="submit">Enviar</button>
+                    <div id="messages-form"></div>
+                    <button type="button" id="form-contact-button">Enviar</button>
                 </form>
             </div>
             <div class="form__desctiption">

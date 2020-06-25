@@ -16,8 +16,7 @@ class LeadController extends Controller
      */
     public function __construct(
         LeadService $service
-    )
-    {
+    ) {
         $this->service = $service;
     }
 
