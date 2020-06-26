@@ -99,6 +99,7 @@
 
         <script async src="{{ URL::asset('/js/site/app.js?v=') . env('APP_VERSION') }}"></script>
 
+        <?php /*
         <!-- Google Tag Manager -->
         <script async>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -106,6 +107,28 @@
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-TWZ29DW');</script>
         <!-- End Google Tag Manager -->
+        */ ?>
+
+        <script>
+            window.onload = function(e){ 
+                setTimeout(function(){
+                    var s = document.createElement("script");
+                    s.type = "text/javascript";
+                    s.src = "//code.jivosite.com/widget/SEvMX4BXyU";
+                    document.body.appendChild(s);
+                }, 1000)
+            }
+        </script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165560877-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-165560877-1');
+        </script>
 
     </body>
 </html>
