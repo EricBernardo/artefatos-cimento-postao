@@ -19,9 +19,9 @@
                 <p>Nossos clientes são importantes para nós. Ficaremos contentes em receber sua visita!</p>
                 @if($setting)
                     @if (isset($_SESSION['_source']) && $_SESSION['_source'] == 'google-ads' && $setting['whatsapp_ads'])
-                    <a class="whatsapp" href="//api.whatsapp.com/send?phone=55{{ onlyNumber($setting['whatsapp_ads']) }}&text=&source=&data=&app_absent=" target="_blank">Envie uma mensagem</a>
+                    <a rel="noreferrer" class="whatsapp" href="//api.whatsapp.com/send?phone=55{{ onlyNumber($setting['whatsapp_ads']) }}&text=&source=&data=&app_absent=" target="_blank">Envie uma mensagem</a>
                     @else
-                    <a class="whatsapp" href="//api.whatsapp.com/send?phone=55{{ onlyNumber($setting['whatsapp']) }}&text=&source=&data=&app_absent=" target="_blank">Envie uma mensagem</a>
+                    <a rel="noreferrer" class="whatsapp" href="//api.whatsapp.com/send?phone=55{{ onlyNumber($setting['whatsapp']) }}&text=&source=&data=&app_absent=" target="_blank">Envie uma mensagem</a>
                     @endif
                     <b>{{ $setting['name_site'] }}</b>
                     <p>{!! nl2br($setting['address']) !!}</p>
@@ -38,7 +38,7 @@
                         <a href="mailto:{{ $setting['email'] }}" target="_blank">{{ $setting['email']}}</a>
                     </p>
                     <p>
-                        <a class="facebook-link" href="{{ $setting['facebook_link'] }}" target="_blank">
+                        <a rel="noreferrer" class="facebook-link" href="{{ $setting['facebook_link'] }}" target="_blank">
                             <img src="{{ URL::asset('images/facebook-icon.png')}}" alt="Visite nossa página no Facebook" title="Visite nossa página no Facebook" />
                         </a>
                     </p>
