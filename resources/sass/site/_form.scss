@@ -18,6 +18,13 @@
         cursor: pointer;
     }
 
+    label {
+        font-weight: bold;
+        color: #75758b;
+        margin: 5px 2px;
+        float: left;
+    }
+
     &__title {
         font-size: 44px;
         color: #ff4c00;
@@ -54,6 +61,7 @@
         .phone {
             a {
                 color: #cf3e00;
+                font-weight: bold;
                 text-decoration: none;
 
                 &:hover {

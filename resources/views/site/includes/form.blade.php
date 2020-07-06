@@ -6,10 +6,14 @@
                 <p>Ligue para nós</p>
                 <form id="form-contact" action="{{ url('/lead') }}">
                     <input type="hidden" name="http_referrer" value="{{ @$_SESSION['last_url'] }} " />
-                    <input type="text" name="name" placeholder="Nome*" />
-                    <input type="text" name="email" placeholder="E-mail*" />
-                    <input type="text" name="phone" placeholder="Telefone*" />
-                    <textarea name="message" placeholder="Mensagem*" rows="6"></textarea>
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" placeholder="Nome*" />
+                    <label for="email">E-mail</label>
+                    <input type="text" id="email" name="email" placeholder="E-mail*" />
+                    <label for="phone">Telefone</label>
+                    <input type="text" id="phone" name="phone" placeholder="Telefone*" />
+                    <label for="message">Mensagem</label>
+                    <textarea id="message" name="message" placeholder="Mensagem*" rows="6"></textarea>
                     <div id="messages-form"></div>
                     <button type="button" id="form-contact-button">Enviar</button>
                 </form>
