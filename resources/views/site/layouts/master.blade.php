@@ -22,7 +22,7 @@
 
             <meta property="og:description" content="{{ $seo['description'] }}" />
 
-            <meta property="og:image" content="{{ URL::asset("storage/" . $seo['image']) }}" />
+            <meta property="og:image" content="{{ URL::asset('storage/' . $seo['image']) }" />
 
             <title>{{ $seo['title'] }}</title>
 
@@ -108,7 +108,7 @@
         })(window,document,'script','dataLayer','GTM-TWZ29DW');</script>
         <!-- End Google Tag Manager -->
         */ ?>
-        <?php /*
+        
         <script>
             window.onload = function(e){ 
                 setTimeout(function(){
@@ -129,7 +129,6 @@
 
           gtag('config', 'UA-165560877-1');
         </script>
-        */ ?>
-
+        
     </body>
 </html>
