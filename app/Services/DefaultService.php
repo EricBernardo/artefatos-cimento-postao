@@ -22,6 +22,10 @@ class DefaultService
         return $this->model->find($id);
     }
 
+    public function findSlug($slug) {
+        return $this->model->where('slug', $slug)->first();
+    }
+
     public function uploadFile($request, $folder, $file = 'image') {
 
         $name = uniqid(date('HisYmd'));

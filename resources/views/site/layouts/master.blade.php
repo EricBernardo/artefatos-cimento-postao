@@ -108,7 +108,7 @@
         })(window,document,'script','dataLayer','GTM-TWZ29DW');</script>
         <!-- End Google Tag Manager -->
         */ ?>
-
+        <?php /*
         <script>
             window.onload = function(e){ 
                 setTimeout(function(){
@@ -129,6 +129,7 @@
 
           gtag('config', 'UA-165560877-1');
         </script>
+        */ ?>
 
     </body>
 </html>

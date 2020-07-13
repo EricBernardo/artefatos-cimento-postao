@@ -44,4 +44,23 @@ class ProductController extends Controller
             'seo'
         ));
     }
+
+    public function show($slug)
+    {
+        $product = $this->serviceProduct->findSlug($slug);
+        $setting = $this->serviceSetting->first();        
+        $seo = $this->serviceSeo->getSeo();
+        
+        if($product) {
+            $seo['title'] = $product['title'] . ' | Produtos | ' . $setting['name_site'];
+            $seo['description'] = $product['description'];
+            $seo['image'] = $product['image'];
+        }
+
+        return view('site/pages/product_show', compact(
+            'setting',
+            'product',
+            'seo'
+        ));
+    }
 }

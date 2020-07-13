@@ -74,6 +74,20 @@
         max-width: 500px;
     }
 
+    a {
+        font-weight: 700;
+        border-radius: 5px;
+        width: 100%;
+        max-width: 150px;
+        padding: 15px;
+        background-color: #ff4c00;
+        color: #fff;
+        font-size: 12px;
+        text-transform: uppercase;
+        text-decoration: none;  
+        margin: 10px auto;      
+    }
+
     @media (max-width: 768px) {
         flex-direction: column;
 

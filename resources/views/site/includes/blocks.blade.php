@@ -15,6 +15,11 @@
                     <div class="block_item__info">
                         <h2 class="block_item__title">{{ $item['title'] }}</h2>
                         <p class="block_item__description">{!! nl2br($item['description']) !!}</p>
+                        @if(isset($item['slug']) && $item['slug'])
+                            <a href="{{ url('/produtos/' . $item['slug']) }}">
+                                Mais Detalhes
+                            </a>
+                        @endif
                     </div>
                 </div>
             @endforeach

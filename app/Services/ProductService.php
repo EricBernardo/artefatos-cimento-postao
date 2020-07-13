@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Product;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class ProductService extends DefaultService
 {
@@ -20,6 +21,7 @@ class ProductService extends DefaultService
         $image_mobile = $this->uploadFile($request, 'abouts', 'image_mobile');
 
         $this->model->insert([
+            'slug' => Str::slug($request->get('title'), '-'),
             'title' => $request->get('title'),
             'description' => $request->get('description'),
             'order' => $request->get('order'),
@@ -39,6 +41,7 @@ class ProductService extends DefaultService
         $entity = $this->model->find($id);
 
         $data = [
+            'slug' => Str::slug($request->get('title'), '-'),
             'title' => $request->get('title'),
             'description' => $request->get('description'),
             'order' => $request->get('order'),

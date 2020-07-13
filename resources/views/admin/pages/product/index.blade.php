@@ -23,6 +23,7 @@
                         <thead>
                             <tr>
                                 <th width="10%">#</th>
+                                <th width="20%">Slug</th>
                                 <th width="20%">Título</th>
                                 <th width="20%">Imagem</th>
                                 <th width="20%">Ordem</th>
@@ -35,6 +36,7 @@
                             @foreach($items as $item)
                                 <tr>
                                     <td>{{ $item['id'] }}</td>
+                                    <td>{{ $item['slug'] }}</td>
                                     <td>{{ $item['title'] }}</td>
                                     <td><img height="50px"
                                             src="{{ url("storage/{$item['image']}") }}"
