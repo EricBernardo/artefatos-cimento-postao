@@ -9,3 +9,11 @@ function onlyNumber($c)
 {
     return preg_replace('/\D/', '', $c);
 }
+
+function summarizeText($string, $length = 120)
+{
+    if(strlen($string) > $length) {
+    	return substr($string, 0, $length) . '...';
+    }
+    return $string;
+}
