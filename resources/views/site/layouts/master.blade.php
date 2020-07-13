@@ -22,7 +22,7 @@
 
             <meta property="og:description" content="{{ $seo['description'] }}" />
 
-            <meta property="og:image" content="{{ URL::asset('storage/' . $seo['image']) }" />
+            <meta property="og:image" content="{{ URL::asset('storage/' . $seo['image']) }}" />
 
             <title>{{ $seo['title'] }}</title>
 
