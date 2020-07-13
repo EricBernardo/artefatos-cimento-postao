@@ -80,7 +80,7 @@
                             $arr_keywords = explode(',', $seo['keywords']);
                             shuffle($arr_keywords);
                             foreach ($arr_keywords as $key => $value) {
-                                echo '<li class="product-list__item"><div data-slide="'.$key.'" class="product"><span>'.$value.'</span></div></li>';
+                                echo '<li class="product-list__item"><div data-slide="'.$key.'" class="product"><p>'.trim($value).'</p></div></li>';
                             }
                         ?>
 
