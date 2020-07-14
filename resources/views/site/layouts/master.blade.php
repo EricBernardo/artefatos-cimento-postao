@@ -80,7 +80,7 @@
                             $arr_keywords = explode(',', $seo['keywords']);
                             shuffle($arr_keywords);
                             foreach ($arr_keywords as $key => $value) {
-                                echo '<li class="product-list__item"><div data-slide="'.$key.'" class="product"><p>'.trim($value).'</p></div></li>';
+                                echo '<li class="product-list__item"><p data-slide="'.$key.'" class="product">'.trim($value).'</p></li>';
                             }
                         ?>
 
@@ -98,6 +98,8 @@
         </footer>
 
         <script async src="{{ URL::asset('/js/site/app.js?v=') . env('APP_VERSION') }}"></script>
+
+        <?php /*
 
         <script>
             window.onload = function(e){ 
@@ -119,6 +121,8 @@
 
           gtag('config', 'UA-165560877-1');
         </script>
+
+        */ ?>
         
     </body>
 </html>
