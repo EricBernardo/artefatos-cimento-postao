@@ -99,8 +99,6 @@
 
         <script async src="{{ URL::asset('/js/site/app.js?v=') . env('APP_VERSION') }}"></script>
 
-        <?php /*
-
         <script>
             window.onload = function(e){ 
                 setTimeout(function(){
@@ -121,8 +119,6 @@
 
           gtag('config', 'UA-165560877-1');
         </script>
-
-        */ ?>
         
     </body>
 </html>
