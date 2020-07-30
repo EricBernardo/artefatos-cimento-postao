@@ -44,32 +44,6 @@
     </head>
     <body>
 
-        <header class="header">
-            @if($setting && $setting['logo'])
-                <a href="{{ url('/') }}" class="logo">
-                    <img src="{{ URL::asset('storage/' . $setting['logo']) }}" alt="{{ $setting['name_site'] }}" title="{{ $setting['name_site'] }}" />
-                </a>
-            @endif
-
-            <input class="menu-btn" type="checkbox" id="menu-btn" />
-            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-            <nav>
-                <ul class="menu">
-                    <li><a href="{{ url('/') }}">Página inicial</a></li>
-                    <li><a href="{{ url('/produtos') }}">Produtos</a></li>
-                    <li><a href="{{ url('/quem-somos') }}">Quem Somos</a></li>
-                    <li><a href="{{ url('/equipe') }}">Equipe</a></li>
-                    <li><a href="{{ url('/contato') }}">Contato</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <div class="container">
-            @yield('content')
-        </div>
-
-        @include('site/includes/map')
-
         <?php if(isset($seo) && $seo['keywords']) : ?>
 
             <div class="carousel js-product-carousel">
@@ -88,8 +62,33 @@
                 </div>
             </div>
 
-          <?php endif; ?>
+        <?php endif; ?>
 
+        <header class="header">
+            @if($setting && $setting['logo'])
+                <a href="{{ url('/') }}" class="logo">
+                    <img src="{{ URL::asset('storage/' . $setting['logo']) }}" alt="{{ $setting['name_site'] }}" title="{{ $setting['name_site'] }}" />
+                </a>
+            @endif
+
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <nav>
+                <ul class="menu">
+                    <li><a href="{{ url('/') }}">Página inicial</a></li>
+                    <li><a href="{{ url('/produtos') }}">Produtos</a></li>
+                    <li><a href="{{ url('/quem-somos') }}">Quem Somos</a></li>
+                    <li><a href="{{ url('/equipe') }}">Equipe</a></li>
+                    <li><a href="{{ url('/contato') }}">Contato</a></li>
+                </ul>
+            </nav>
+        </header> 
+
+        <div class="container">
+            @yield('content')
+        </div>
+
+        @include('site/includes/map')
 
         <footer class="footer">
             @if($setting && $setting['copyright'])
