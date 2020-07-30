@@ -17,6 +17,7 @@
                 </div>
             </div>
         </div>
+        @include('site/includes/form', ['class' => 'form-product'])
     </section>
 @endif
 

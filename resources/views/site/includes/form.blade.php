@@ -1,6 +1,10 @@
 <section>
     <div class="form {{ $class }}">
-        <h2 class="form__title">Entre em contato</h2>
+        @if($class === 'form-product')
+            <h2 class="form__title">Solicite seu orçamento</h2>
+        @else
+            <h2 class="form__title">Entre em contato</h2>
+        @endif
         <div class="form__items">
             <div class="form__form">
                 <p>Ligue para nós</p>
