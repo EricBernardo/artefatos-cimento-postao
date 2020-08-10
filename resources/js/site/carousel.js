@@ -56,7 +56,6 @@ function carouselize(carousel) {
 
   intervalNextSlide = setInterval(nextSlide, 3000);
 
-  setTimeout(() => {
-      carousel.querySelector(".carousel__view").style.display = "block";
-  }, 3000);
+  carousel.querySelector(".carousel__view").style.display = "block";
+
 }
