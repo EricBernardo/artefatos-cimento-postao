@@ -8,7 +8,7 @@
 
         <meta name="theme-color" content="#FF4C00">
 
-        <link rel="manifest" href="{{ url('manifest.json'); }}">
+        <link rel="manifest" href="{{ url('manifest.json') }}">
 
         <meta property="og:locale" content="pt_BR">
 
