@@ -6,6 +6,8 @@
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <meta name="theme-color" content="#FF4C00">
+
         <meta property="og:locale" content="pt_BR">
 
         <meta property="og:type" content="website">

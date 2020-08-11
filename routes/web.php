@@ -39,6 +39,18 @@ Route::get('/contato', 'ContactController@index')->name('contacts.index');
 
 Route::post('/lead', 'LeadController@store')->name('leads.store');
 
+Route::get('manifest.json', function() {
+    return [
+      "name" => "Artefatos de Cimento Portão",
+      "short_name" => "AC Portão",
+      "theme_color" => "#FF4C00",
+      "background_color" => "#FFFFFF",
+      "display" => "standalone",
+      "scope" => "/",
+      "start_url" => "/"
+    ];
+});
+
 Route::get('sitemap.xml', function () {
 
     // create new sitemap object
