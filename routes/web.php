@@ -30,6 +30,13 @@ use Illuminate\Support\Facades\URL;
 |
 */
 
+$getRequestUri = request()->getRequestUri();
+
+if(strpos($getRequestUri, '/public') !== false) {    
+  header('Location: https://www.artefatosdecimentoportao.com.br' . str_replace('/public', '', $getRequestUri), true, 301);        
+  die("Aguarde...");
+}
+
 Route::get('/', 'HomeController@index')->name('home.index');
 Route::get('/produtos', 'ProductController@index')->name('products.index');
 Route::get('/produtos/{slug}', 'ProductController@show')->name('products.show');
