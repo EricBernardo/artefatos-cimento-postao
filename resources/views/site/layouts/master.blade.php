@@ -113,7 +113,7 @@
             }
         </script>
         
-        <scrtip>
+        <script>
         
             const html = `
                 <style>
