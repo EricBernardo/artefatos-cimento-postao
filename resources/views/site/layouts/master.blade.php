@@ -136,7 +136,8 @@
                         padding: 20px;
                         border: 10px solid #fff;
                         width: 90%;
-                        max-width: 450px;
+                        max-width: 500px;
+                        max-height: 500px;
                         flex-direction: column;
                         border-radius: 5px;
                         height: 80%;
