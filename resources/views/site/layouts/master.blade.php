@@ -218,12 +218,6 @@
                 modal.style.display = "none";
             }
 
-            window.onclick = function(event) {
-              if (event.target == modal) {
-                modal.style.display = "none";
-              }
-            }
-
             document.querySelector('body').addEventListener('mouseleave', e => {
                 if (!localStorage.getItem('close-my-modal')) {
                 	document.getElementById("modal-title").innerHTML = "Olá, já vai sair?";
