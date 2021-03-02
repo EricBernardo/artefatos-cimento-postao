@@ -237,7 +237,7 @@
 				    	document.getElementById("modal-title").innerHTML = "Olá, como posso ajudar?";
 				    	document.getElementById("my-modal").style.display = 'block';
 				    }
-				}, 20000);
+				}, 15000);
 			}
             
         </script>
