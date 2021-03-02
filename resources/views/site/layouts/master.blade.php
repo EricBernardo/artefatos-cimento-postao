@@ -233,7 +233,7 @@
 
             if (!localStorage.getItem('close-my-modal')) {
 	            setTimeout(function() {
-				    if (document.getElementById("my-modal").style.display == "none") {
+				    if (document.getElementById("my-modal").style.display != "block") {
 				    	document.getElementById("modal-title").innerHTML = "Olá, como posso ajudar?";
 				    	document.getElementById("my-modal").style.display = 'block';
 				    }
