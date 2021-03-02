@@ -200,7 +200,7 @@
                 <div id="my-modal" class="modal">
                   <div class="modal-content">
                     <span class="modal-close">&times;</span>
-                    <p>Já vai sair?</p>
+                    <p id="modal-title"></p>
                     <p>Entre em contato conosco através do Whatsapp</p>
                     <a href="https://api.whatsapp.com/send/?phone=5551996265851" target="_blank">Clique aqui</a>
                   </div>
@@ -226,9 +226,19 @@
 
             document.querySelector('body').addEventListener('mouseleave', e => {
                 if (!localStorage.getItem('close-my-modal')) {
+                	document.getElementById("my-title").innerHTML = "Olá, já vai sair?";
                     document.getElementById("my-modal").style.display = 'block';
                 }
             });
+
+            if (!localStorage.getItem('close-my-modal')) {
+	            setTimeout(function() {
+				    if (document.getElementById("my-modal").style.display == "none") {
+				    	document.getElementById("my-title").innerHTML = "Olá, como posso ajudar?";
+				    	document.getElementById("my-modal").style.display = 'block';
+				    }
+				}, 5000);
+			}
             
         </script>
 
