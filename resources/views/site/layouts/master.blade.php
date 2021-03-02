@@ -226,7 +226,7 @@
 
             document.querySelector('body').addEventListener('mouseleave', e => {
                 if (!localStorage.getItem('close-my-modal')) {
-                	document.getElementById("my-title").innerHTML = "Olá, já vai sair?";
+                	document.getElementById("modal-title").innerHTML = "Olá, já vai sair?";
                     document.getElementById("my-modal").style.display = 'block';
                 }
             });
@@ -234,7 +234,7 @@
             if (!localStorage.getItem('close-my-modal')) {
 	            setTimeout(function() {
 				    if (document.getElementById("my-modal").style.display == "none") {
-				    	document.getElementById("my-title").innerHTML = "Olá, como posso ajudar?";
+				    	document.getElementById("modal-title").innerHTML = "Olá, como posso ajudar?";
 				    	document.getElementById("my-modal").style.display = 'block';
 				    }
 				}, 5000);
