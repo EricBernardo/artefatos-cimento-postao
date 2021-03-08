@@ -45,6 +45,7 @@ Route::get('/equipe', 'TeamController@index')->name('teams.index');
 Route::get('/contato', 'ContactController@index')->name('contacts.index');
 
 Route::post('/lead', 'LeadController@store')->name('leads.store');
+Route::get('/lead/olx', 'LeadController@olx')->name('leads.store');
 
 Route::get('manifest.json', function() {
     return [
