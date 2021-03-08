@@ -1,2 +1,1 @@
-<p>Data: {{! $date }}</p>
-<p>{!! nl2br($title) !!}</p>
+<p>{!! nl2br(trim($title)) !!}</p>
