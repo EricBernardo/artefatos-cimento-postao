@@ -41,7 +41,7 @@ class LeadController extends Controller
 
         if($result) {
 
-            $url = 'https://rs.olx.com.br/regioes-de-porto-alegre-torres-e-santa-cruz-do-sul?q=Aqu%C3%A1rio&sf=1';
+            $url = 'https://rs.olx.com.br/regioes-de-porto-alegre-torres-e-santa-cruz-do-sul?q=aqu%C3%A1rio%20marinho&sf=1';
 
             $dom = new \DOMDocument();
             libxml_use_internal_errors(true);
