@@ -63,7 +63,7 @@ class ProductController extends Controller
                 'seo'
             ));
         } else {
-            redirect('/produtos');
+            return redirect('/produtos');
         }        
     }
 }
