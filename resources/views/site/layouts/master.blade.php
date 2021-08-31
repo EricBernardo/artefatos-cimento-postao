@@ -279,7 +279,7 @@
                 <div class="acp-fixed-tabs-whats">
                   <div class="acp-whatsphone">
                     <div class="acp-whatsphone-icone">
-                      <a target="_blank" href="https://api.whatsapp.com/send?phone=5551996265851">Agora é só clicar e <br><strong>Fazer seu Pedido!</strong></a>          
+                      <a target="_blank" href="https://api.whatsapp.com/send?phone=555196265851">Agora é só clicar e <br><strong>Fazer seu Pedido!</strong></a>          
                     </div>
                   </div>          
                 </div>
