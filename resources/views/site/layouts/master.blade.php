@@ -47,27 +47,7 @@
 
     </head>
     <body>
-
-        <?php if(isset($seo) && $seo['keywords']) : ?>
-
-            <div class="carousel js-product-carousel">
-                <div class="carousel__view">
-                    <ul class="product-list js-product-list">
-
-                        <?php
-                            $arr_keywords = explode(',', $seo['keywords']);
-                            shuffle($arr_keywords);
-                            foreach ($arr_keywords as $key => $value) {
-                                echo '<li class="product-list__item"><p data-slide="'.$key.'" class="product">'.trim($value).'</p></li>';
-                            }
-                        ?>
-
-                    </ul>
-                </div>
-            </div>
-
-        <?php endif; ?>
-
+    
         <header class="header">
             @if($setting && $setting['logo'])
                 <a href="{{ url('/') }}" class="logo">
@@ -87,6 +67,26 @@
                 </ul>
             </nav>
         </header> 
+        
+        <?php if(isset($seo) && $seo['keywords']) : ?>
+
+            <div class="carousel js-product-carousel" aria-hidden="true">
+                <div class="carousel__view">
+                    <ul class="product-list js-product-list">
+
+                        <?php
+                            $arr_keywords = explode(',', $seo['keywords']);
+                            shuffle($arr_keywords);
+                            foreach ($arr_keywords as $key => $value) {
+                                echo '<li class="product-list__item"><p data-slide="'.$key.'" class="product">'.trim($value).'</p></li>';
+                            }
+                        ?>
+
+                    </ul>
+                </div>
+            </div>
+
+        <?php endif; ?>
 
         <div class="container">
             @yield('content')
