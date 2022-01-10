@@ -101,19 +101,7 @@
         </footer>
 
         <script async src="{{ URL::asset('/js/site/app.js?v=') . env('APP_VERSION') }}"></script>
-        
-        <!-- Smartsupp Live Chat script -->
-        <script type="text/javascript">
-            var _smartsupp = _smartsupp || {};
-            _smartsupp.key = '82b690dfb1396c8845cac3aa3f8c6b4fb249280a';
-            window.smartsupp||(function(d) {
-              var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-              s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-              c.type='text/javascript';c.charset='utf-8';c.async=true;
-              c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-            })(document);
-        </script>
-        
+                
         <script>
         
             const html = `
@@ -239,7 +227,7 @@
                     .acp-fixed-tabs-whats {
                       position: fixed;
                       right: 0px;
-                      top: 140px;
+                      bottom: 30px;
                       z-index: 100;
                     }
                     .acp-whatsphone {
