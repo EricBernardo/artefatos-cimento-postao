@@ -237,7 +237,8 @@
                       border-radius: 30px 0 0 30px;
                       transition: 0.7s ease;
                     }
-                    .acp-whatsphone:hover {
+                    .acp-whatsphone.active,
+                    .acp-whatsphone:hover{
                       width: 280px;
                       transition: 0.7s ease;
                     }
@@ -265,7 +266,7 @@
                     }
                 </style>
                 <div class="acp-fixed-tabs-whats">
-                  <div class="acp-whatsphone">
+                  <div class="acp-whatsphone active">
                     <div class="acp-whatsphone-icone">
                       <a target="_blank" href="https://api.whatsapp.com/send?phone=555196265851">Agora é só clicar e <br><strong>Fazer seu Pedido!</strong></a>          
                     </div>
@@ -274,6 +275,14 @@
             `;
 
             document.querySelector('body').insertAdjacentHTML('beforeend', html_whatsapp);
+            
+            setTimeout(function() {
+                var elWp = document.querySelector('.acp-whatsphone');
+                if(elWp) {
+                    elWp.classList.remove('active');
+                }
+            }, 5000)
+
             
         </script>
 
