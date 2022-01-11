@@ -264,6 +264,27 @@
                       font-size: 21px;
                       margin-left: 70px;
                     }
+                    .acp-whatsphone.active {
+                      box-shadow: 0 0 0 0 rgba(51, 217, 178, 1);
+                      animation: pulse-whats 1s infinite;
+                    }
+
+                    @keyframes pulse-whats {
+                      0% {
+
+                        box-shadow: 0 0 0 0 rgba(51, 217, 178, 0.7);
+                      }
+
+                      70% {
+
+                        box-shadow: 0 0 0 15px rgba(51, 217, 178, 0);
+                      }
+
+                      100% {
+
+                        box-shadow: 0 0 0 0 rgba(51, 217, 178, 0);
+                      }
+                    }
                 </style>
                 <div class="acp-fixed-tabs-whats">
                   <div class="acp-whatsphone active">
