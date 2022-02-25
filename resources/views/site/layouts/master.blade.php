@@ -1,110 +1,111 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
 
-        <meta charset="utf-8">
+<head>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
 
-        <meta name="theme-color" content="#FF4C00">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="manifest" href="{{ url('manifest.json') }}">
+    <meta name="theme-color" content="#FF4C00">
 
-        <meta property="og:locale" content="pt_BR">
+    <link rel="manifest" href="{{ url('manifest.json') }}">
 
-        <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
 
-        <meta name="google-site-verification" content="g-6BiY4w-I_Eg9AApeNLFOqyeRJb-C7_PNziwQMB2LI">
+    <meta property="og:type" content="website">
 
-        @if($seo)
+    <meta name="google-site-verification" content="g-6BiY4w-I_Eg9AApeNLFOqyeRJb-C7_PNziwQMB2LI">
 
-            <meta name="description" content="{{ $seo['description'] }}">
+    @if($seo)
 
-            <meta name="keywords" content="{{ $seo['keywords'] }}">
+    <meta name="description" content="{{ $seo['description'] }}">
 
-            <meta property="og:title" content="{{ $seo['title'] }}" />
+    <meta name="keywords" content="{{ $seo['keywords'] }}">
 
-            <meta property="og:description" content="{{ $seo['description'] }}" />
+    <meta property="og:title" content="{{ $seo['title'] }}" />
 
-            <meta property="og:image" content="{{ URL::asset('storage/' . $seo['image']) }}" />
+    <meta property="og:description" content="{{ $seo['description'] }}" />
 
-            <title>{{ $seo['title'] }}</title>
+    <meta property="og:image" content="{{ URL::asset('storage/' . $seo['image']) }}" />
 
+    <title>{{ $seo['title'] }}</title>
+
+    @endif
+
+    <meta property="og:url" content="{{ URL::current() }}" />
+
+    <link rel="canonical" href="{{ URL::current() }}" />
+
+    @if($setting)
+    <meta property="og:site_name" content="{{ $setting['name_site'] }}" />
+    <link rel="icon" href="{{ URL::asset('storage/' . $setting['favicon']) }}" />
+    @endif
+
+    <link rel="stylesheet" href="{{ URL::asset('/css/site/app.css?v=') . env('APP_VERSION') }}">
+
+
+
+</head>
+
+<body>
+
+    <header class="header">
+        @if($setting && $setting['logo'])
+        <a href="{{ url('/') }}" class="logo">
+            <img src="{{ URL::asset('storage/' . $setting['logo']) }}" alt="{{ $setting['name_site'] }}" />
+        </a>
         @endif
 
-        <meta property="og:url" content="{{ URL::current() }}" />
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn">Abrir menu<span class="navicon"></span></label>
+        <nav>
+            <ul class="menu">
+                <li><a href="{{ url('/') }}">Página inicial</a></li>
+                <li><a href="{{ url('/produtos') }}">Produtos</a></li>
+                <li><a href="{{ url('/quem-somos') }}">Quem Somos</a></li>
+                <li><a href="{{ url('/equipe') }}">Equipe</a></li>
+                <li><a href="{{ url('/contato') }}">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <link rel="canonical" href="{{ URL::current() }}" />
+    <?php if (isset($seo) && $seo['keywords']) : ?>
 
-        @if($setting)
-        <meta property="og:site_name" content="{{ $setting['name_site'] }}" />
-            <link rel="icon" href="{{ URL::asset('storage/' . $setting['favicon']) }}" />
-        @endif
+        <div class="carousel js-product-carousel" aria-hidden="true">
+            <div class="carousel__view">
+                <ul class="product-list js-product-list">
 
-        <link rel="stylesheet" href="{{ URL::asset('/css/site/app.css?v=') . env('APP_VERSION') }}">
+                    <?php
+                    $arr_keywords = explode(',', $seo['keywords']);
+                    shuffle($arr_keywords);
+                    foreach ($arr_keywords as $key => $value) {
+                        echo '<li class="product-list__item"><p data-slide="' . $key . '" class="product">' . trim($value) . '</p></li>';
+                    }
+                    ?>
 
-
-
-    </head>
-    <body>
-    
-        <header class="header">
-            @if($setting && $setting['logo'])
-                <a href="{{ url('/') }}" class="logo">
-                    <img src="{{ URL::asset('storage/' . $setting['logo']) }}" alt="{{ $setting['name_site'] }}" title="{{ $setting['name_site'] }}" />
-                </a>
-            @endif
-
-            <input class="menu-btn" type="checkbox" id="menu-btn" />
-            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-            <nav>
-                <ul class="menu">
-                    <li><a href="{{ url('/') }}">Página inicial</a></li>
-                    <li><a href="{{ url('/produtos') }}">Produtos</a></li>
-                    <li><a href="{{ url('/quem-somos') }}">Quem Somos</a></li>
-                    <li><a href="{{ url('/equipe') }}">Equipe</a></li>
-                    <li><a href="{{ url('/contato') }}">Contato</a></li>
                 </ul>
-            </nav>
-        </header> 
-        
-        <?php if(isset($seo) && $seo['keywords']) : ?>
-
-            <div class="carousel js-product-carousel" aria-hidden="true">
-                <div class="carousel__view">
-                    <ul class="product-list js-product-list">
-
-                        <?php
-                            $arr_keywords = explode(',', $seo['keywords']);
-                            shuffle($arr_keywords);
-                            foreach ($arr_keywords as $key => $value) {
-                                echo '<li class="product-list__item"><p data-slide="'.$key.'" class="product">'.trim($value).'</p></li>';
-                            }
-                        ?>
-
-                    </ul>
-                </div>
             </div>
-
-        <?php endif; ?>
-
-        <div class="container">
-            @yield('content')
         </div>
 
-        @include('site/includes/map')
+    <?php endif; ?>
 
-        <footer class="footer">
-            @if($setting && $setting['copyright'])
-                <p>{{ $setting['copyright'] }}</p>
-            @endif
-        </footer>
+    <div class="container">
+        @yield('content')
+    </div>
 
-        <script async src="{{ URL::asset('/js/site/app.js?v=') . env('APP_VERSION') }}"></script>
-                
-        <script>
-        
-            const html = `
+    @include('site/includes/map')
+
+    <footer class="footer">
+        @if($setting && $setting['copyright'])
+        <p>{{ $setting['copyright'] }}</p>
+        @endif
+    </footer>
+
+    <script async src="{{ URL::asset('/js/site/app.js?v=') . env('APP_VERSION') }}"></script>
+
+    <script>
+        const html = `
                 <style>
                     .modal {
                         display: none; 
@@ -149,17 +150,19 @@
                         background-size: 50px;
                         background-repeat: no-repeat;
                         background-color: #1bd741;
+                        background-position: center left;
                         cursor: pointer;
                         color: white;
                         font-size: 17px;
-                        padding: 15px 30px 15px 60px;
+                        padding: 10px 50px;
                         text-decoration: none;
-                        max-width: 250px;
+                        max-width: 270px;
                         margin: 0 auto;
                         margin-top: 10px;
                         text-transform: uppercase;
                         opacity: 0.9;
                         border: 3px solid;
+                        text-align: center;
                     }
 
                     .modal-content a:hover {
@@ -189,40 +192,40 @@
                   <div class="modal-content">
                     <span class="modal-close">&times;</span>
                     <p id="modal-title"></p>
-                    <p>Entre em contato conosco através do Whatsapp</p>
-                    <a href="https://api.whatsapp.com/send/?phone=555196265851" target="_blank">Clique aqui</a>
+                    <p>Entre em contato conosco:</p>
+                    <a href="https://api.whatsapp.com/send/?phone=555196265851" target="_blank">Através do nosso WhatsApp</a>
                   </div>
                 </div>
             `;
 
-            document.querySelector('body').insertAdjacentHTML('beforeend', html);
+        document.querySelector('body').insertAdjacentHTML('beforeend', html);
 
-            const modal = document.getElementById("my-modal");
+        const modal = document.getElementById("my-modal");
 
-            const modalClose = document.getElementsByClassName("modal-close")[0];
+        const modalClose = document.getElementsByClassName("modal-close")[0];
 
-            modalClose.onclick = function() {
-                localStorage.setItem('close-my-modal', true);
-                modal.style.display = "none";
+        modalClose.onclick = function() {
+            localStorage.setItem('close-my-modal', true);
+            modal.style.display = "none";
+        }
+
+        document.querySelector('body').addEventListener('mouseleave', e => {
+            if (!localStorage.getItem('close-my-modal')) {
+                document.getElementById("modal-title").innerHTML = "Olá, já vai sair?";
+                document.getElementById("my-modal").style.display = 'block';
             }
+        });
 
-            document.querySelector('body').addEventListener('mouseleave', e => {
-                if (!localStorage.getItem('close-my-modal')) {
-                	document.getElementById("modal-title").innerHTML = "Olá, já vai sair?";
+        if (!localStorage.getItem('close-my-modal')) {
+            setTimeout(function() {
+                if (document.getElementById("my-modal").style.display != "block") {
+                    document.getElementById("modal-title").innerHTML = "Olá, como posso ajudar?";
                     document.getElementById("my-modal").style.display = 'block';
                 }
-            });
+            }, 15000);
+        }
 
-            if (!localStorage.getItem('close-my-modal')) {
-	            setTimeout(function() {
-				    if (document.getElementById("my-modal").style.display != "block") {
-				    	document.getElementById("modal-title").innerHTML = "Olá, como posso ajudar?";
-				    	document.getElementById("my-modal").style.display = 'block';
-				    }
-				}, 15000);
-			}
-            
-            const html_whatsapp = `
+        const html_whatsapp = `
                 <style>
                     .acp-fixed-tabs-whats {
                       position: fixed;
@@ -295,26 +298,28 @@
                 </div>
             `;
 
-            document.querySelector('body').insertAdjacentHTML('beforeend', html_whatsapp);
-            
-            setTimeout(function() {
-                var elWp = document.querySelector('.acp-whatsphone');
-                if(elWp) {
-                    elWp.classList.remove('active');
-                }
-            }, 5000)
+        document.querySelector('body').insertAdjacentHTML('beforeend', html_whatsapp);
 
-            
-        </script>
+        setTimeout(function() {
+            var elWp = document.querySelector('.acp-whatsphone');
+            if (elWp) {
+                elWp.classList.remove('active');
+            }
+        }, 5000)
+    </script>
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165560877-1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'UA-165560877-1');
-        </script>
-        
-    </body>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165560877-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-165560877-1');
+    </script>
+
+</body>
+
 </html>

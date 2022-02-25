@@ -63,7 +63,7 @@ function getCaptcha() {
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4) {
                 const { key, img } = JSON.parse(xhr.response);
-                __formContact.querySelector('.form__captcha').innerHTML = '<img src="' + img + '">';
+                __formContact.querySelector('.form__captcha').innerHTML = '<img alt="captcha" src="' + img + '">';
                 __formContact.querySelector('[name="key"]').value = key;
                 __formContact.querySelector('[name="captcha"]').value = '';
             }
