@@ -72,7 +72,7 @@
 
     <?php if (isset($seo) && $seo['keywords']) : ?>
 
-        <div class="carousel js-product-carousel--inatived" aria-hidden="true">
+        <div class="carousel js-product-carousel" aria-hidden="true">
             <div class="carousel__view">
                 <ul class="product-list js-product-list">
 

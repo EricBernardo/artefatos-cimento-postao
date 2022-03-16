@@ -2,7 +2,6 @@
 
 (function () {
   var carousels = document.querySelectorAll(".js-product-carousel");
-
   [].forEach.call(carousels, function (carousel) {
       carouselize(carousel);
   });
@@ -15,8 +14,7 @@ function carouselize(carousel) {
   var products = carousel.querySelectorAll(".product");
   var productAmount = 0;
   var productAmountVisible = 4;
-  // var carouselPrev = carousel.querySelector(".js-carousel-prev");
-  // var carouselNext = carousel.querySelector(".js-carousel-next");
+  var time = 1000;
 
   //Count all the products
   [].forEach.call(products, function (product) {
@@ -33,28 +31,36 @@ function carouselize(carousel) {
   }
 
   let intervalNextSlide = null;
+  let intervalPrevSlide = null;
+
   let nextSlide = function () {
-      if (productListSteps < productAmount - productAmountVisible) {
+      if (productListSteps < productAmountVisible) {
           productListSteps++;
           moveProductList();
       } else {
           clearInterval(intervalNextSlide);
-          intervalPrevSlide = setInterval(prevSlide, 3000);
+          intervalPrevSlide = setInterval(prevSlide, time);
       }
   };
 
-  let intervalPrevSlide = null;
-  let prevSlide = function () {
+  let prevSlide = function () {      
       if (productListSteps > 0) {
           productListSteps--;
           moveProductList();
       } else {
           clearInterval(intervalPrevSlide);
-          intervalNextSlide = setInterval(nextSlide, 3000);
+          intervalNextSlide = setInterval(nextSlide, time);
       }
   };
 
-  intervalNextSlide = setInterval(nextSlide, 3000);
+  carousel.addEventListener('mouseleave', function() {
+    clearInterval(intervalNextSlide);
+    clearInterval(intervalPrevSlide);
+  });
+
+  carousel.addEventListener('mouseenter', function() {
+    intervalNextSlide = setInterval(nextSlide, time);
+  });
 
   carousel.querySelector(".carousel__view").style.display = "block";
 
