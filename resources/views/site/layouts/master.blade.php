@@ -267,7 +267,7 @@
                       font-size: 21px;
                       margin-left: 70px;
                     }
-                    .acp-whatsphone.active {
+                    .acp-whatsphone:hover {
                       box-shadow: 0 0 0 0 rgba(51, 217, 178, 1);
                       animation: pulse-whats 1s infinite;
                     }
@@ -290,7 +290,7 @@
                     }
                 </style>
                 <div class="acp-fixed-tabs-whats">
-                  <div class="acp-whatsphone active">
+                  <div class="acp-whatsphone">
                     <div class="acp-whatsphone-icone">
                       <a target="_blank" href="https://api.whatsapp.com/send?phone=555196265851">Agora é só clicar e <br><strong>Fazer seu Pedido!</strong></a>          
                     </div>
