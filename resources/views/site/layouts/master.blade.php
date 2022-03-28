@@ -199,7 +199,9 @@
             `;
 
         //document.querySelector('body').insertAdjacentHTML('beforeend', html);
-
+        
+        /*
+        
         const modal = document.getElementById("my-modal");
 
         const modalClose = document.getElementsByClassName("modal-close")[0];
@@ -224,6 +226,8 @@
                 }
             }, 15000);
         }
+        
+        */
 
         const html_whatsapp = `
                 <style>
