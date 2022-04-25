@@ -198,9 +198,7 @@
                 </div>
             `;
 
-        //document.querySelector('body').insertAdjacentHTML('beforeend', html);
-        
-        /*
+        document.querySelector('body').insertAdjacentHTML('beforeend', html);        
         
         const modal = document.getElementById("my-modal");
 
@@ -227,8 +225,6 @@
             }, 15000);
         }
         
-        */
-
         const html_whatsapp = `
                 <style>
                     .acp-fixed-tabs-whats {
@@ -302,16 +298,15 @@
                 </div>
             `;
 
-        //document.querySelector('body').insertAdjacentHTML('beforeend', html_whatsapp);
-        
-        /*
+        document.querySelector('body').insertAdjacentHTML('beforeend', html_whatsapp);
+                
         setTimeout(function() {
             var elWp = document.querySelector('.acp-whatsphone');
             if (elWp) {
                 elWp.classList.remove('active');
             }
         }, 5000);
-        */
+        
     </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
