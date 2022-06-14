@@ -310,17 +310,14 @@
     </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165560877-1"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NJ0G3TQHGF"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-165560877-1');
+      gtag('config', 'G-NJ0G3TQHGF');
     </script>
-
 </body>
 
 </html>
