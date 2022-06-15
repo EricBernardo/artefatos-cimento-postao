@@ -278,7 +278,7 @@
                       font-size: 21px;
                       margin-left: 70px;
                     }
-                    .acp-whatsphone:hover, .acp-whatsphone.active {
+                    .acp-whatsphone {
                       box-shadow: 0 0 0 0 rgba(51, 217, 178, 1);
                       animation: pulse-whats 1s infinite;
                     }
@@ -303,7 +303,7 @@
                 <div class="acp-fixed-tabs-whats">
                   <div class="acp-whatsphone active">
                     <div class="acp-whatsphone-icone">
-                      <a target="_blank" href="https://api.whatsapp.com/send?phone=555196265851" class="click_whatsapp">Agora é só clicar e <br><strong>Fazer seu Pedido!</strong></a>          
+                      <a target="_blank" href="https://api.whatsapp.com/send?phone=555196265851" class="click_whatsapp">Agora é só clicar aqui para<br><strong>Fazer seu Orçamento!</strong></a>          
                     </div>
                   </div>          
                 </div>
