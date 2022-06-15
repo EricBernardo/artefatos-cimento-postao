@@ -262,6 +262,7 @@
                         background-size: 44px;
                         background-position: 16px 7px;
                         padding: 7px;
+                        width: 320px;
                     }
                     .acp-whatsphone-icone a {
                       color: #ffffff;
