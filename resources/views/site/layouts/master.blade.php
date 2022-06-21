@@ -64,7 +64,7 @@
     <header class="header">
         @if($setting && $setting['logo'])
         <a href="{{ url('/') }}" class="logo">
-            <img src="{{ URL::asset('storage/' . $setting['logo']) }}" alt="{{ $setting['name_site'] }}" />
+            <img src="{{ URL::asset('storage/' . $setting['logo']) }}" alt="{{ $setting['name_site'] }}" width="139" height="50" />
         </a>
         @endif
 
