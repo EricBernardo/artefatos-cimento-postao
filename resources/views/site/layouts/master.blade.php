@@ -123,7 +123,7 @@
                     <span class="modal-close">&times;</span>
                     <p id="modal-title"></p>
                     <p>Entre em contato conosco:</p>
-                    <a href="https://api.whatsapp.com/send/?phone=555196265851" target="_blank" class="click_whatsapp">Através do nosso WhatsApp</a>
+                    <a href="https://api.whatsapp.com/send/?phone=5551996265851" target="_blank" class="click_whatsapp">Através do nosso WhatsApp</a>
                   </div>
                 </div>
             `;
