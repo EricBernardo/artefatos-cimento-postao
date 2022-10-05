@@ -37,6 +37,10 @@ if(strpos($getRequestUri, '/public') !== false) {
   die("Aguarde...");
 }
 
+Route::get('produtos/poste-de-luz', function(){ 
+    return Redirect::to('/produtos/poste-de-luz-padrao-rge', 301); 
+});
+
 Route::get('/', 'HomeController@index')->name('home.index');
 Route::get('/produtos', 'ProductController@index')->name('products.index');
 Route::get('/produtos/{slug}', 'ProductController@show')->name('products.show');
