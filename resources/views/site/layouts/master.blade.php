@@ -61,7 +61,7 @@
         <link rel="icon" href="{{ URL::asset('storage/' . $setting['favicon']) }}" />
     @endif
 
-    <link rel="stylesheet" href="{{ URL::asset('/css/site/app.css?v=') . time() . env('APP_VERSION') }}">
+    <link rel="stylesheet" href="{{ URL::asset('/css/site/app.css?v=') . env('APP_VERSION') }}">
 
 </head>
 
@@ -125,7 +125,7 @@
         @endif
     </footer>
 
-    <script async src="{{ URL::asset('/js/site/app.js?v=') . time() . env('APP_VERSION') }}"></script>
+    <script async src="{{ URL::asset('/js/site/app.js?v=') . env('APP_VERSION') }}"></script>
 
     <script>
         const html = `
