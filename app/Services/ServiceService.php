@@ -22,6 +22,10 @@ class ServiceService extends DefaultService
         $this->model->insert([
             'title' => $request->get('title'),
             'description' => $request->get('description'),
+            'image_height' => $request->get('image_height'),
+            'image_width' => $request->get('image_width'),
+            'image_mobile_height' => $request->get('image_mobile_height'),
+            'image_mobile_width' => $request->get('image_mobile_width'),
             'order' => $request->get('order'),
             'image' => $image,
             'image_mobile' => $image_mobile,
@@ -41,6 +45,10 @@ class ServiceService extends DefaultService
         $data = [
             'title' => $request->get('title'),
             'description' => $request->get('description'),
+            'image_height' => $request->get('image_height'),
+            'image_width' => $request->get('image_width'),
+            'image_mobile_height' => $request->get('image_mobile_height'),
+            'image_mobile_width' => $request->get('image_mobile_width'),
             'order' => $request->get('order'),
             'status' => $request->get('status') == '1' ? true : false,
         ];

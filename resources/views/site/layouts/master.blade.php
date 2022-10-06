@@ -4,11 +4,22 @@
 <head>
 
     <!-- Google Tag Manager -->
-    <script async>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TWZ29DW');</script>
+    <script async>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TWZ29DW');
+    </script>
     <!-- End Google Tag Manager -->
 
     <meta charset="utf-8">
@@ -25,47 +36,48 @@
 
     <meta name="google-site-verification" content="g-6BiY4w-I_Eg9AApeNLFOqyeRJb-C7_PNziwQMB2LI">
 
-    @if($seo)
+    @if ($seo)
+        <meta name="description" content="{{ $seo['description'] }}">
 
-    <meta name="description" content="{{ $seo['description'] }}">
+        @if (isset($seo['keywords']))
+            <meta name="keywords" content="{{ $seo['keywords'] }}">
+        @endif
 
-    <meta name="keywords" content="{{ $seo['keywords'] }}">
+        <meta property="og:title" content="{{ $seo['title'] }}" />
 
-    <meta property="og:title" content="{{ $seo['title'] }}" />
+        <meta property="og:description" content="{{ $seo['description'] }}" />
 
-    <meta property="og:description" content="{{ $seo['description'] }}" />
+        <meta property="og:image" content="{{ URL::asset('storage/' . $seo['image']) }}" />
 
-    <meta property="og:image" content="{{ URL::asset('storage/' . $seo['image']) }}" />
-
-    <title>{{ $seo['title'] }}</title>
-
+        <title>{{ $seo['title'] }}</title>
     @endif
 
     <meta property="og:url" content="{{ URL::current() }}" />
 
     <link rel="canonical" href="{{ URL::current() }}" />
 
-    @if($setting)
-    <meta property="og:site_name" content="{{ $setting['name_site'] }}" />
-    <link rel="icon" href="{{ URL::asset('storage/' . $setting['favicon']) }}" />
+    @if ($setting)
+        <meta property="og:site_name" content="{{ $setting['name_site'] }}" />
+        <link rel="icon" href="{{ URL::asset('storage/' . $setting['favicon']) }}" />
     @endif
 
-    <link rel="stylesheet" href="{{ URL::asset('/css/site/app.css?v=') . env('APP_VERSION') }}">
- 
+    <link rel="stylesheet" href="{{ URL::asset('/css/site/app.css?v=') . time() . env('APP_VERSION') }}">
+
 </head>
 
 <body>
 
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TWZ29DW"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TWZ29DW" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <header class="header">
-        @if($setting && $setting['logo'])
-        <a href="{{ url('/') }}" class="logo">
-            <img src="{{ URL::asset('storage/' . $setting['logo']) }}" alt="{{ $setting['name_site'] }}" width="139" height="50" />
-        </a>
+        @if ($setting && $setting['logo'])
+            <a href="{{ url('/') }}" class="logo">
+                <img src="{{ URL::asset('storage/' . $setting['logo']) }}" alt="{{ $setting['name_site'] }}"
+                    width="139" height="50" />
+            </a>
         @endif
 
         <input class="menu-btn" type="checkbox" id="menu-btn" />
@@ -81,23 +93,23 @@
         </nav>
     </header>
 
-    <?php if (isset($seo) && $seo['keywords']) : ?>
+    <?php if (isset($seo['keywords']) && $seo['keywords']) : ?>
 
-        <div class="carousel js-product-carousel" aria-hidden="true">
-            <div class="carousel__view">
-                <ul class="product-list js-product-list">
+    <div class="carousel js-product-carousel" aria-hidden="true">
+        <div class="carousel__view">
+            <ul class="product-list js-product-list">
 
-                    <?php
-                    $arr_keywords = explode(',', $seo['keywords']);
-                    shuffle($arr_keywords);
-                    foreach ($arr_keywords as $key => $value) {
-                        echo '<li class="product-list__item"><p data-slide="' . $key . '" class="product">' . trim($value) . '</p></li>';
-                    }
-                    ?>
+                <?php
+                $arr_keywords = explode(',', $seo['keywords']);
+                shuffle($arr_keywords);
+                foreach ($arr_keywords as $key => $value) {
+                    echo '<li class="product-list__item"><p data-slide="' . $key . '" class="product">' . trim($value) . '</p></li>';
+                }
+                ?>
 
-                </ul>
-            </div>
+            </ul>
         </div>
+    </div>
 
     <?php endif; ?>
 
@@ -108,12 +120,12 @@
     @include('site/includes/map')
 
     <footer class="footer">
-        @if($setting && $setting['copyright'])
-        <p>{{ $setting['copyright'] }}</p>
+        @if ($setting && $setting['copyright'])
+            <p>{{ $setting['copyright'] }}</p>
         @endif
     </footer>
 
-    <script async src="{{ URL::asset('/js/site/app.js?v=') . env('APP_VERSION') }}"></script>
+    <script async src="{{ URL::asset('/js/site/app.js?v=') . time() . env('APP_VERSION') }}"></script>
 
     <script>
         const html = `
@@ -128,8 +140,8 @@
                 </div>
             `;
 
-        document.querySelector('body').insertAdjacentHTML('beforeend', html);        
-        
+        document.querySelector('body').insertAdjacentHTML('beforeend', html);
+
         const modal = document.getElementById("my-modal");
 
         const modalClose = document.getElementsByClassName("modal-close")[0];
@@ -154,7 +166,7 @@
                 }
             }, 15000);
         }
-        
+
         const html_whatsapp = `
                 <style>.acp-fixed-tabs-whats{position:fixed;right:0;bottom:30px;z-index:100}.acp-whatsphone{background:#1ebea5;height:60px;width:70px;border-radius:30px 0 0 30px;transition:.7s ease}.acp-whatsphone.active,.acp-whatsphone:hover{width:320px;transition:.7s ease}.acp-whatsphone-icone{background-image:url(data:image/png;base64,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);background-repeat:no-repeat;background-size:44px;background-position:16px 7px;padding:7px;width:320px}.acp-whatsphone-icone a{color:#fff;font-size:14px;line-height:20px;margin-left:70px;text-decoration:none;height:60px;font-family:sans-serif}.acp-whatsphone-icone a strong{display:block;font-size:21px;margin-left:70px}.acp-whatsphone{box-shadow:0 0 0 0 #33d9b2;animation:pulse-whats 1s infinite}@keyframes pulse-whats{0%{box-shadow:0 0 0 0 rgba(51,217,178,.7)}70%{box-shadow:0 0 0 15px rgba(51,217,178,0)}100%{box-shadow:0 0 0 0 rgba(51,217,178,0)}}</style>
                 <div class="acp-fixed-tabs-whats">
@@ -167,15 +179,14 @@
             `;
 
         document.querySelector('body').insertAdjacentHTML('beforeend', html_whatsapp);
-                
+
         setTimeout(function() {
             var elWp = document.querySelector('.acp-whatsphone');
             if (elWp) {
                 elWp.classList.remove('active');
             }
         }, 5000);
-        
-    </script>   
+    </script>
 
 </body>
 
