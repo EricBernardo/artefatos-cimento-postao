@@ -10,7 +10,11 @@
                     <div class="product_item">
                         <div class="product_item__image">
                             <img src="{{ URL::asset('storage/' . (isMobile() && $product['image_mobile'] ? $product['image_mobile'] : $product['image'])) }}"
-                                alt="{{ $product['title'] }}" />
+                                alt="{{ $product['title'] }}"
+                                {{ !isMobile() && $product['image_height'] ? 'height=' . $product['image_height'] . 'px' : '' }}
+                                {{ !isMobile() && $product['image_width'] ? 'width=' . $product['image_width'] . 'px' : '' }}
+                                {{ isMobile() && $product['image_mobile_height'] ? 'height=' . $product['image_mobile_height'] . 'px' : '' }}
+                                {{ isMobile() && $product['image_mobile_width'] ? 'width=' . $product['image_mobile_width'] . 'px' : '' }} />
                         </div>
                         <div class="product_item__info">
                             <h2 class="product_item__description">{!! nl2br($product['description']) !!}</h2>
