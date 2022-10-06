@@ -28,7 +28,8 @@ class ProductRequestStore extends FormRequest
             'description' => 'required',
             'order' => 'required',
             'image' => 'required|image',
-            'status' => 'required'
+            'status' => 'required',
+            'faq' => 'JSON|nullable'
         ];
     }
 }

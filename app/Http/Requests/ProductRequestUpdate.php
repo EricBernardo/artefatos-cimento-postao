@@ -28,7 +28,8 @@ class ProductRequestUpdate extends FormRequest
             'description' => 'required',
             'order' => 'required',
             'image' => 'image',
-            'status' => 'required'
+            'status' => 'required',
+            'faq' => 'JSON|nullable'
         ];
     }
 }

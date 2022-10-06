@@ -23,9 +23,7 @@ $faqs = json_decode($product['faq'], 1);
         {
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          "mainEntity": [
-            {!! $product['faq'] !!}
-          ]
+          "mainEntity": {!! $product['faq'] !!}
         }
       </script>
 @endif
