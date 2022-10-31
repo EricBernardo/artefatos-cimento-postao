@@ -172,7 +172,7 @@
                 <div class="acp-fixed-tabs-whats">
                   <div class="acp-whatsphone active">
                     <div class="acp-whatsphone-icone">
-                      <a target="_blank" href="https://api.whatsapp.com/send?phone=555196265851" class="click_whatsapp">Agora é só clicar aqui para<br><strong>Fazer seu Orçamento!</strong></a>          
+                      <a target="_blank" href="https://api.whatsapp.com/send?phone=5551996265851" class="click_whatsapp">Agora é só clicar aqui para<br><strong>Fazer seu Orçamento!</strong></a>          
                     </div>
                   </div>          
                 </div>
