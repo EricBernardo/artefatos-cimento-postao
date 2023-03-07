@@ -135,7 +135,7 @@
                     <span class="modal-close">&times;</span>
                     <p id="modal-title"></p>
                     <p>Entre em contato conosco:</p>
-                    <a href="https://api.whatsapp.com/send/?phone=5551996265851" target="_blank" class="click_whatsapp">Através do nosso WhatsApp</a>
+                    <a href="https://api.whatsapp.com/send/?phone=5551999762155" target="_blank" class="click_whatsapp">Através do nosso WhatsApp</a>
                   </div>
                 </div>
             `;
@@ -172,7 +172,7 @@
                 <div class="acp-fixed-tabs-whats">
                   <div class="acp-whatsphone active">
                     <div class="acp-whatsphone-icone">
-                      <a target="_blank" href="https://api.whatsapp.com/send?phone=5551996265851" class="click_whatsapp">Agora é só clicar aqui para<br><strong>Fazer seu Orçamento!</strong></a>          
+                      <a target="_blank" href="https://api.whatsapp.com/send?phone=5551999762155" class="click_whatsapp">Agora é só clicar aqui para<br><strong>Fazer seu Orçamento!</strong></a>          
                     </div>
                   </div>          
                 </div>
